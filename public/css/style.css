@@ -190,8 +190,7 @@ footer { background: var(--dark); color: var(--white); padding: 80px 0 24px; }
 .footer-links h4 { margin-bottom: 20px; }
 .footer-links a { display: block; color: var(--gray-light); text-decoration: none; margin-bottom: 12px; transition: all 0.2s; }
 .footer-links a:hover { color: var(--primary); padding-left: 5px; }
-.footer-email-btn { display: inline-flex !important; align-items: center; gap: 8px; background: var(--dark-light); padding: 10px 16px !important; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s; font-size: 0.9rem; margin-top: 4px; }
-.footer-email-btn:hover { background: var(--primary) !important; color: var(--white) !important; padding-left: 16px !important; border-color: var(--primary); transform: translateY(-2px); }
+
 .footer-bottom { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: var(--gray-light); }
 
 /* Modal */
