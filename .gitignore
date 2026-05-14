@@ -2,7 +2,7 @@
 node_modules/
 data/
 react-app/node_modules/
-react-app/dist/
+# react-app/dist/ -- committed pre-built for Render deploy
 *.log
 .DS_Store
 Thumbs.db
