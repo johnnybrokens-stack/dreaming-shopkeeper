@@ -1,0 +1,8 @@
+.env
+node_modules/
+data/
+react-app/node_modules/
+react-app/dist/
+*.log
+.DS_Store
+Thumbs.db

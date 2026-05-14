@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Generátor - Dreaming Shopkeeper</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    .gen-page { min-height: 100vh; background: linear-gradient(135deg, var(--dark) 0%, #0f2620 100%); }
+    .gen-nav { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .gen-container { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
+    .gen-card { background: var(--dark-light); border-radius: var(--radius); padding: 40px; border: 1px solid rgba(16,185,129,0.2); }
+    .gen-card h1 { color: var(--white); text-align: center; font-size: 2rem; margin-bottom: 8px; }
+    .gen-card .subtitle { color: var(--gray-light); text-align: center; margin-bottom: 32px; }
+    .gen-card .form-group label { color: var(--white); }
+    .gen-card .form-group input, .gen-card .form-group select, .gen-card .form-group textarea { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); color: var(--white); }
+    .gen-card .form-group input::placeholder, .gen-card .form-group textarea::placeholder { color: var(--gray-light); }
+    .gen-card .form-group select option { background: var(--dark); color: var(--white); }
+    .gen-card .form-group input:focus, .gen-card .form-group select:focus, .gen-card .form-group textarea:focus { border-color: var(--primary); }
+    #gen-output { margin-top: 32px; display: none; }
+    #gen-output .output-content { color: #fbbf24; background: #1e3a5f; border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
+    #gen-output .output-header { background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,255,255,0.1); }
+    #gen-output .output-header h3 { color: var(--white); }
+    .gen-cta { text-align: center; margin-top: 24px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: var(--radius-sm); }
+    .gen-cta p { color: var(--gray-light); margin-bottom: 12px; }
+    .nav-link { color: var(--gray-light); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .nav-link:hover { color: var(--primary); }
+    .template-badge-display { display: inline-block; padding: 6px 16px; background: rgba(16,185,129,0.15); color: var(--primary-light); border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; border: 1px solid rgba(16,185,129,0.3); }
+    .templates-nav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; }
+    .templates-nav a { padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: all 0.2s; background: rgba(255,255,255,0.05); color: var(--gray-light); border: 1px solid rgba(255,255,255,0.1); }
+    .templates-nav a:hover, .templates-nav a.active { background: rgba(16,185,129,0.15); color: var(--primary-light); border-color: rgba(16,185,129,0.3); }
+    .form-row-2 { display: flex; gap: 12px; }
+    .form-row-2 .form-group { flex: 1; }
+    @media (max-width: 600px) { .form-row-2 { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <div class="gen-page">
+    <div class="gen-nav">
+      <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:16px 24px;">
+        <a href="/" class="logo"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
+        <div style="display:flex;gap:16px;align-items:center;">
+          <a href="/login" class="nav-link">Přihlásit se</a>
+          <a href="/register" class="btn btn-primary">Začít zdarma</a>
+        </div>
+      </div>
+    </div>
+    <div class="gen-container">
+      <div class="templates-nav">
+        <a href="/generator">🎯 Vše</a>
+        <a href="/generator/popis-produktu" class="active" id="nav-popis-produktu">🛍️ Popis produktu</a>
+        <a href="/generator/poutavy-titulek" id="nav-poutavy-titulek">📌 Poutavý titulek</a>
+        <a href="/generator/seo-meta" id="nav-seo-meta">🔍 SEO Meta</a>
+        <a href="/generator/opusteny-kosik" id="nav-opusteny-kosik">📧 Opuštěný košík</a>
+      </div>
+      <div class="gen-card">
+        <div id="template-icon" style="text-align:center;font-size:3rem;margin-bottom:8px;">🎯</div>
+        <h1 id="template-title">AI Generátor textů</h1>
+        <p id="template-desc" class="subtitle">Vyplňte údaje a AI během pár sekund vytvoří profesionální e-commerce text</p>
+        <form id="gen-form">
+          <div class="form-group" id="template-id-field" style="display:none">
+            <input type="hidden" id="gen-template" value="">
+          </div>
+          <div class="form-group">
+            <label>Název produktu <span class="required">*</span></label>
+            <input type="text" id="gen-topic" placeholder="např. Bezdrátová sluchátka s ANC" required>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Kategorie produktu</label>
+              <select id="gen-category" class="styled-select">
+                <option value="">— Vyberte —</option>
+                <option value="elektronika">Elektronika</option>
+                <option value="moda">Móda</option>
+                <option value="obuv">Obuv</option>
+                <option value="krasa">Krása & Péče</option>
+                <option value="sport">Sport</option>
+                <option value="domacnost">Domácnost</option>
+                <option value="jine">Jiné</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Cílová skupina</label>
+              <input type="text" id="gen-audience" placeholder="např. muži 25-45 let">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Klíčová slova (volitelné)</label>
+            <input type="text" id="gen-keywords" placeholder="např. kvalitní, levné, dárek">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="gen-btn">
+            <span id="gen-btn-text">⚡ Vygenerovat text</span>
+            <span id="gen-btn-loading" style="display:none"><span class="spinner-small"></span> Generuji...</span>
+          </button>
+        </form>
+        <div id="gen-loading" class="loading-area" style="display:none">
+          <div class="spinner"></div>
+          <p style="color:var(--white);">AI tvoří text...</p>
+        </div>
+        <div id="gen-output">
+          <div class="output-header">
+            <h3 id="output-heading">✨ Vygenerovaný text</h3>
+            <div class="output-actions">
+              <span id="gen-word-count" style="color:var(--gray-light);"></span>
+              <button class="btn btn-sm btn-outline" onclick="copyOutput()" id="copy-btn" style="color:var(--white);border-color:rgba(255,255,255,0.3);">📋 Kopírovat</button>
+            </div>
+          </div>
+          <div id="gen-output-content" class="output-content"></div>
+          <div class="gen-cta">
+            <p>Líbí se vám výsledek? Zaregistrujte se a získejte přístup ke všem šablonám!</p>
+            <a href="/register" class="btn btn-primary">Vytvořit účet zdarma →</a>
+          </div>
+        </div>
+        <div id="gen-error" class="error-area" style="display:none"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const TEMPLATES = {
+      'popis-produktu': { icon: '🛍️', name: 'Popis produktu', desc: 'Profesionální popisy zaměřené na výhody, vlastnosti a silné CTA' },
+      'poutavy-titulek': { icon: '📌', name: 'Poutavý titulek (H1)', desc: '5 vysoce konverzních nadpisů pro produkt nebo kategorii' },
+      'seo-meta': { icon: '🔍', name: 'Meta popisky pro SEO', desc: 'SEO titulky a popisky optimalizované pro Google' },
+      'opusteny-kosik': { icon: '📧', name: 'E-mail o opuštěném košíku', desc: 'Přesvědčivý e-mail pro znovuzískání zákazníků' }
+    };
+
+    const path = window.location.pathname;
+    let currentTemplate = '';
+    for (const [id, info] of Object.entries(TEMPLATES)) {
+      if (path.includes(id)) {
+        currentTemplate = id;
+        break;
+      }
+    }
+
+    if (currentTemplate) {
+      const t = TEMPLATES[currentTemplate];
+      document.getElementById('template-icon').textContent = t.icon;
+      document.getElementById('template-title').textContent = t.icon + ' ' + t.name;
+      document.getElementById('template-desc').textContent = t.desc;
+      document.getElementById('gen-template').value = currentTemplate;
+      document.getElementById('output-heading').textContent = t.icon + ' Vygenerovaný ' + t.name;
+      document.querySelectorAll('.templates-nav a').forEach(a => a.classList.remove('active'));
+      const navEl = document.getElementById('nav-' + currentTemplate);
+      if (navEl) navEl.classList.add('active');
+    } else {
+      document.querySelectorAll('.templates-nav a').forEach(a => a.classList.remove('active'));
+      const allNav = document.querySelector('.templates-nav a:first-child');
+      if (allNav) allNav.classList.add('active');
+    }
+
+    document.getElementById('gen-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const template = document.getElementById('gen-template').value || 'popis-produktu';
+      const topic = document.getElementById('gen-topic').value;
+      const audience = document.getElementById('gen-audience').value;
+      const keywords = document.getElementById('gen-keywords').value;
+      const btn = document.getElementById('gen-btn');
+      const btnText = document.getElementById('gen-btn-text');
+      const btnLoading = document.getElementById('gen-btn-loading');
+      const loading = document.getElementById('gen-loading');
+      const output = document.getElementById('gen-output');
+      const error = document.getElementById('gen-error');
+
+      if (!topic || topic.length < 3) {
+        error.textContent = 'Zadejte název produktu (min. 3 znaky)';
+        error.style.display = 'block';
+        return;
+      }
+
+      btn.disabled = true;
+      btnText.style.display = 'none';
+      btnLoading.style.display = 'inline';
+      loading.style.display = 'block';
+      output.style.display = 'none';
+      error.style.display = 'none';
+
+      const body = { template, topic };
+      if (audience) body.audience = audience;
+      if (keywords) body.keywords = keywords;
+
+      try {
+        const res = await fetch('/api/content/public-generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Generování selhalo');
+        document.getElementById('gen-output-content').innerHTML = formatText(data.output);
+        document.getElementById('gen-word-count').textContent = data.wordCount + ' slov';
+        output.style.display = 'block';
+      } catch (err) {
+        error.textContent = err.message;
+        error.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btnText.style.display = 'inline';
+        btnLoading.style.display = 'none';
+        loading.style.display = 'none';
+      }
+    });
+
+    function formatText(text) {
+      return text
+        .replace(/```(\w*)\n?([\s\S]*?)```/g, '<pre><code>$2</code></pre>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/\n/g, '<br>');
+    }
+
+    function copyOutput() {
+      const content = document.getElementById('gen-output-content').innerText;
+      navigator.clipboard.writeText(content);
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '✓ Zkopírováno!';
+      setTimeout(() => btn.textContent = '📋 Kopírovat', 2000);
+    }
+  </script>
+</body>
+</html>

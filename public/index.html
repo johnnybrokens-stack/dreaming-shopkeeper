@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreaming Shopkeeper - E-Shop Copywriter AI</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="/" class="logo">
+        <div class="logo-icon">🏪</div>
+        Dreaming<span>Shopkeeper</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#jak-to-funguje">Jak to funguje</a>
+        <a href="#sablony">Šablony</a>
+        <a href="/pricing">Ceník</a>
+        <a href="/generator" class="btn btn-outline" style="border-color:var(--secondary);color:var(--secondary);">🤖 AI Generátor</a>
+        <a href="/login" class="btn btn-outline">Přihlásit se</a>
+        <a href="/register" class="btn btn-primary">Začít zdarma</a>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="particles" id="particles"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-text animate-fade-in">
+        <div class="badge pulse">⚡ AI copywriter pro e-commerce</div>
+        <h1>Profesionální texty pro váš <span class="gradient-text">e-shop za 10 sekund</span></h1>
+        <p class="hero-subtitle">Generujte popisy produktů, SEO meta popisky, chytlavé titulky a e-maily pro opuštěné košíky. Vše česky, přesvědčivě a eticky.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary btn-lg glow" onclick="scrollToFreeTrial()">Vyzkoušet zdarma →</button>
+          <button class="btn btn-outline btn-lg" onclick="document.getElementById('jak-to-funguje').scrollIntoView({behavior:'smooth'})">Jak to funguje</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-number" data-count="12000">0</span><span class="stat-label">E-shopů používá</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-number" data-count="2000000">0</span><span class="stat-label">Textů vytvořeno</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-number">4.9★</span><span class="stat-label">Hodnocení</span></div>
+        </div>
+      </div>
+      <div class="hero-visual animate-slide-up">
+        <div class="demo-window">
+          <div class="demo-header">
+            <div class="demo-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <span class="demo-title">Dreaming Shopkeeper</span>
+          </div>
+          <div class="demo-body">
+            <div class="demo-input"><label>Šablona</label><div class="demo-select">🛍️ Popis produktu</div></div>
+            <div class="demo-input"><label>Produkt</label><div class="demo-topic">"Bezdrátová sluchátka s ANC"</div></div>
+            <div class="demo-generating"><div class="generating-bar"><div class="generating-progress"></div></div><span>Generuji...</span></div>
+            <div class="demo-output"><p><strong>Bezdrátová sluchátka s ANC</strong></p><p>Zažijte dokonalý zvuk...</p><p><strong>Přínosy:</strong></p><p>✓ 30h výdrž baterie</p><p>✓ Aktivní potlačení hluku</p></div>
+          </div>
+        </div>
+        <div class="floating-card card-1"><span>✓</span> Hotovo za 5s</div>
+        <div class="floating-card card-2"><span>📈</span> +35% konverze</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brands-bar">
+    <div class="container"><p>Tvoříme texty pro <strong>12 000+</strong> e-shopů v ČR a SR</p></div>
+  </section>
+
+  <section id="jak-to-funguje" class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Jak to funguje</span>
+        <h2>Tři kroky k <span class="gradient-text">profesionálnímu textu</span></h2>
+        <p class="section-subtitle">Žádné složité nastavování. Stačí zadat produkt a AI se postará o zbytek.</p>
+      </div>
+      <div class="steps-container">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-icon">📝</div>
+          <h3>Zadejte produkt</h3>
+          <p>Napište název produktu, cílovou skupinu a klíčová slova, která chcete použít.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-icon">⚡</div>
+          <h3>AI tvoří text</h3>
+          <p>Naše AI vygeneruje profesionální, přesvědčivý text přizpůsobený pro e-commerce během sekund.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-icon">🚀</div>
+          <h3>Kopírujte a publikujte</h3>
+          <p>Zkopírujte hotový text a vložte ho přímo do vašeho e-shopu. Hotovo!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="free-trial" class="free-trial-section">
+    <div class="container">
+      <div class="free-trial-card">
+        <div class="free-trial-badge">Zdarma</div>
+        <h2>Vyzkoušejte <span class="gradient-text">zdarma</span></h2>
+        <p>Zadejte název produktu a AI vám okamžitě vygeneruje ukázkový popis. Bez registrace.</p>
+        <div class="free-trial-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Název produktu</label>
+              <input type="text" id="free-topic" placeholder="např. Bezdrátová sluchátka s ANC" maxlength="200">
+            </div>
+            <div class="form-group">
+              <label>&nbsp;</label>
+              <button class="btn btn-primary btn-lg" onclick="generateFreeSample()" id="free-generate-btn">
+                <span id="free-btn-text">⚡ Vygenerovat ukázku</span>
+                <span id="free-btn-loading" style="display:none"><span class="spinner-small"></span> Generuji...</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="free-loading" class="loading-area" style="display:none">
+          <div class="spinner"></div>
+          <p>Tvořím ukázkový text...</p>
+        </div>
+        <div id="free-output" class="free-output" style="display:none">
+          <div class="output-header">
+            <h3>✨ Ukázkový výstup</h3>
+            <div class="output-actions">
+              <span id="free-word-count"></span>
+              <button class="btn btn-sm btn-outline" onclick="copyFreeOutput()">📋 Kopírovat</button>
+            </div>
+          </div>
+          <div id="free-output-content" class="output-content"></div>
+          <div class="free-trial-cta">
+            <p>Líbí se vám výsledek? <strong>Registrujte se zdarma</strong> a získejte přístup ke všem šablonám.</p>
+            <button class="btn btn-primary" onclick="showModal('register')">Vytvořit účet zdarma →</button>
+          </div>
+        </div>
+        <div id="free-error" class="error-area" style="display:none"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Funkce</span>
+        <h2>Vše, co potřebujete pro <span class="gradient-text">lepší prodeje</span></h2>
+        <p class="section-subtitle">Od popisů produktů po SEO meta popisky — jedna platforma.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon-wrap"><div class="feature-icon">⚡</div></div><h3>Rychlé jako blesk</h3><p>Profesionální texty za méně než 10 sekund.</p><div class="feature-stat"><span class="stat-highlight">10s</span><span>Průměrná doba</span></div></div>
+        <div class="feature-card"><div class="feature-icon-wrap"><div class="feature-icon">🇨🇿</div></div><h3>100% česky</h3><p>Veškerý output v profesionální češtině.</p><div class="feature-stat"><span class="stat-highlight">CZ</span><span>Mateřský jazyk</span></div></div>
+        <div class="feature-card"><div class="feature-icon-wrap"><div class="feature-icon">🔍</div></div><h3>SEO optimalizováno</h3><p>Texty, které se zobrazují v Google.</p><div class="feature-stat"><span class="stat-highlight">3x</span><span>Více trafficu</span></div></div>
+        <div class="feature-card"><div class="feature-icon-wrap"><div class="feature-icon">🛡️</div></div><h3>Etické texty</h3><p>Žádná lživá tvrzení, žádné falešné recenze.</p><div class="feature-stat"><span class="stat-highlight">✓</span><span>Truth in Ads</span></div></div>
+        <div class="feature-card"><div class="feature-icon-wrap"><div class="feature-icon">📈</div></div><h3>Vyšší konverze</h3><p>Texty, které přesvědčují a prodávají.</p><div class="feature-stat"><span class="stat-highlight">+35%</span><span>Nárůst konverzí</span></div></div>
+        <div class="feature-card"><div class="feature-icon-wrap"><div class="feature-icon">🚀</div></div><h3>Škálujte</h3><p>Přidejte stovky produktů během minut.</p><div class="feature-stat"><span class="stat-highlight">∞</span><span>Obsah ve velkém</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sablony" class="templates-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Šablony</span>
+        <h2>4 specializované <span class="gradient-text">e-commerce šablony</span></h2>
+        <p class="section-subtitle">Vyberte si z knihovny profesionálně vytvořených šablon</p>
+      </div>
+      <div class="templates-grid">
+        <a href="/generator/popis-produktu" class="template-card"><div class="template-icon">🛍️</div><h3>Popis produktu</h3><p>Profesionální popisy zaměřené na výhody, vlastnosti a silné CTA</p><div class="template-badge popular">Nejpoužívanější</div></a>
+        <a href="/generator/poutavy-titulek" class="template-card"><div class="template-icon">📌</div><h3>Poutavý titulek (H1)</h3><p>5 vysoce konverzních nadpisů pro produkt nebo kategorii</p><div class="template-badge new">Nové</div></a>
+        <a href="/generator/seo-meta" class="template-card"><div class="template-icon">🔍</div><h3>Meta popisky pro SEO</h3><p>SEO titulky a popisky optimalizované pro Google</p></a>
+        <a href="/generator/opusteny-kosik" class="template-card"><div class="template-icon">📧</div><h3>E-mail o opuštěném košíku</h3><p>Přesvědčivý e-mail pro znovuzískání zákazníků</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Připraveni zlepšit své prodeje?</h2>
+        <p>Připojte se k 12 000+ e-shopům, které používají AI pro profesionální texty.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-white btn-lg" onclick="showModal('register')">Začít zdarma — bez karty</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="/" class="logo"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
+          <p>AI copywriter specializovaný na e-commerce. Profesionální texty pro váš e-shop během sekund.</p>
+          <div class="social-links"><a href="mailto:benbrokes.it@gmail.com" class="social-link" title="benbrokes.it@gmail.com">✉</a><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a></div>
+        </div>
+        <div class="footer-links"><h4>Produkt</h4><a href="#jak-to-funguje">Jak to funguje</a><a href="#sablony">Šablony</a><a href="/pricing">Ceník</a></div>
+        <div class="footer-links"><h4>Firma</h4><a href="#">O nás</a><a href="#">Blog</a><a href="mailto:benbrokes.it@gmail.com">Kontakt</a></div>
+        <div class="footer-links"><h4>Právní</h4><a href="#">Soukromí</a><a href="#">Podmínky</a><a href="#">Zásady reklam</a></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Dreaming Shopkeeper. Všechna práva vyhrazena.</p></div>
+    </div>
+  </footer>
+
+  <!-- AUTH MODAL -->
+  <div id="auth-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="login-form" class="auth-form">
+        <h2>Vítejte zpět</h2>
+        <p class="auth-subtitle">Pokračujte v tvorbě profesionálních textů</p>
+        <button class="btn btn-google btn-block" onclick="handleGoogleLogin()">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Přihlásit se přes Google
+        </button>
+        <div class="divider"><span>nebo</span></div>
+        <form onsubmit="handleLogin(event)">
+          <div class="form-group"><label>E-mail</label><input type="email" id="login-email" required placeholder="vas@email.cz"></div>
+          <div class="form-group"><label>Heslo</label><input type="password" id="login-password" required placeholder="Vaše heslo"></div>
+          <button type="submit" class="btn btn-primary btn-block">Přihlásit se</button>
+        </form>
+        <p class="auth-switch">Nemáte účet? <a href="#" onclick="switchAuth('register')">Zaregistrujte se zdarma</a></p>
+      </div>
+      <div id="register-form" class="auth-form" style="display:none">
+        <h2>Vytvořit účet</h2>
+        <p class="auth-subtitle">Začněte tvořit profesionální texty během sekund</p>
+        <button class="btn btn-google btn-block" onclick="handleGoogleLogin()">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Registrovat přes Google
+        </button>
+        <div class="divider"><span>nebo</span></div>
+        <form onsubmit="handleRegister(event)">
+          <div class="form-group"><label>Jméno</label><input type="text" id="register-name" required placeholder="Jan Novák"></div>
+          <div class="form-group"><label>E-mail</label><input type="email" id="register-email" required placeholder="vas@email.cz"></div>
+          <div class="form-group"><label>Heslo</label><input type="password" id="register-password" required placeholder="Min. 6 znaků"></div>
+          <button type="submit" class="btn btn-primary btn-block">Vytvořit účet</button>
+        </form>
+        <p class="auth-switch">Už máte účet? <a href="#" onclick="switchAuth('login')">Přihlásit se</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

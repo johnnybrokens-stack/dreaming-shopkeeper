@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Přihlášení - Dreaming Shopkeeper</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    .auth-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--dark) 0%, #0f2620 100%); padding: 24px; }
+    .auth-card { background: var(--white); border-radius: var(--radius); padding: 48px; width: 100%; max-width: 420px; box-shadow: var(--shadow-lg); }
+    .auth-card .logo { justify-content: center; margin-bottom: 32px; }
+    .auth-card h2 { text-align: center; margin-bottom: 8px; }
+    .auth-card .auth-subtitle { margin-bottom: 28px; }
+    .auth-card .form-group { margin-bottom: 20px; }
+    .auth-card .btn-block { margin-top: 8px; }
+    .auth-card .auth-switch { margin-top: 20px; text-align: center; color: var(--gray); }
+    .auth-card .auth-switch a { color: var(--primary); font-weight: 600; }
+    .error-msg { padding: 12px 16px; background: #fef2f2; color: var(--danger); border-radius: var(--radius-sm); margin-bottom: 16px; display: none; border: 1px solid #fecaca; }
+  </style>
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-card">
+      <a href="/" class="logo"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
+      <h2>Vítejte zpět</h2>
+      <p class="auth-subtitle">Pokračujte v tvorbě profesionálních textů</p>
+      <div id="error-msg" class="error-msg"></div>
+      <form onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" id="login-email" required placeholder="vas@email.cz">
+        </div>
+        <div class="form-group">
+          <label>Heslo</label>
+          <input type="password" id="login-password" required placeholder="Vaše heslo">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Přihlásit se</button>
+      </form>
+      <p class="auth-switch">Nemáte účet? <a href="/register">Zaregistrujte se zdarma</a></p>
+      <p class="auth-switch" style="margin-top: 12px;"><a href="/">← Zpět na hlavní stránku</a></p>
+    </div>
+  </div>
+  <script>
+    async function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      const btn = e.target.querySelector('button[type=submit]');
+      const errEl = document.getElementById('error-msg');
+      btn.disabled = true;
+      btn.textContent = 'Přihlašuji...';
+      errEl.style.display = 'none';
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+        if (!res.ok) { errEl.textContent = data.error || 'Přihlášení selhalo'; errEl.style.display = 'block'; return; }
+        localStorage.setItem('cf_token', data.token);
+        localStorage.setItem('cf_user', JSON.stringify(data.user));
+        window.location.href = '/dashboard';
+      } catch (err) {
+        errEl.textContent = 'Přihlášení selhalo. Zkuste znovu.';
+        errEl.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Přihlásit se';
+      }
+    }
+  </script>
+</body>
+</html>
