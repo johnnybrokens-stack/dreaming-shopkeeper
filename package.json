@@ -4,6 +4,7 @@
   "description": "AI-powered content generation SaaS platform",
   "main": "server.js",
   "scripts": {
+    "build": "cd react-app && npm install && npx vite build",
     "start": "node server.js",
     "dev": "node --watch server.js"
   },
