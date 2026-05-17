@@ -255,8 +255,9 @@ export default function GeneratorForm({ template, onGenerate, loading, result, e
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-primary to-primary-dark text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 transition-all"
+          className="w-full py-4 rounded-xl font-bold text-sm bg-gradient-to-r from-purple-600 via-purple-500 to-violet-600 text-white shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 transition-all duration-300 active:translate-y-0 active:scale-[0.98] relative overflow-hidden group"
         >
+          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           {loading ? (
             <span className="flex items-center justify-center gap-2">
               <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />

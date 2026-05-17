@@ -70,24 +70,28 @@ app.get('/pricing', (req, res) => {
   res.sendFile(__dirname + '/public/paywall.html');
 });
 
-// React app (built) — assets served at /app/, HTML served at /generator
+// React app (built) — assets served at /app/, HTML served at /samo-ui
 app.use('/app', express.static(__dirname + '/react-app/dist'));
 app.get('/app/*', (req, res) => {
   res.sendFile(__dirname + '/react-app/dist/index.html');
 });
 
-app.get('/generator', (req, res) => {
+app.get('/samo-ui', (req, res) => {
   res.sendFile(__dirname + '/react-app/dist/index.html');
 });
 
-app.get('/generator/:template', (req, res) => {
+app.get('/samo-ui/:template', (req, res) => {
   const valid = ['popis-produktu', 'poutavy-titulek', 'seo-meta', 'opusteny-kosik'];
   if (valid.includes(req.params.template)) {
     res.sendFile(__dirname + '/react-app/dist/index.html');
   } else {
-    res.redirect('/generator');
+    res.redirect('/samo-ui');
   }
 });
+
+// Legacy /generator routes redirect to /samo-ui
+app.get('/generator', (req, res) => { res.redirect('/samo-ui'); });
+app.get('/generator/:template', (req, res) => { res.redirect('/samo-ui'); });
 
 app.get('/login', (req, res) => {
   res.sendFile(__dirname + '/public/login.html');

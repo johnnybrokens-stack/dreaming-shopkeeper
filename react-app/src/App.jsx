@@ -51,8 +51,9 @@ export default function App() {
             Dreaming<span className="text-primary">Shopkeeper</span>
           </a>
           <div className="flex items-center gap-3">
+            <a href="/" className="text-sm text-gray-400 hover:text-white transition-colors">← Zpět</a>
             <a href="/login" className="text-sm text-gray-400 hover:text-white transition-colors">Přihlásit se</a>
-            <a href="/register" className="text-sm font-semibold px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary-dark transition-all shadow-lg shadow-primary/30">Začít zdarma</a>
+            <a href="/register" className="text-sm font-semibold px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:from-purple-500 hover:to-purple-600 transition-all shadow-lg shadow-purple-500/30 hover:-translate-y-0.5">Začít zdarma</a>
           </div>
         </div>
       </nav>
@@ -62,10 +63,10 @@ export default function App() {
         {/* Header */}
         <div className="text-center space-y-2 animate-fade-in">
           <h1 className="text-3xl md:text-4xl font-extrabold">
-            🤖 AI <span className="gradient-text">Generátor textů</span>
+            🤖 <span className="gradient-text">SAMO UI</span>
           </h1>
           <p className="text-gray-400 max-w-xl mx-auto">
-            Vyplňte údaje a AI během pár sekund vytvoří profesionální e-commerce text na míru vaší šabloně.
+            Vyplňte údaje a AI během pár sekund vytvoří profesionální e-commerce text na míru vaší šabloně. Každý text spotřebuje 1 kredit.
           </p>
         </div>
 
