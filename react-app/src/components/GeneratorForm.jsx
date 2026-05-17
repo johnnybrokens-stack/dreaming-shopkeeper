@@ -122,6 +122,15 @@ export default function GeneratorForm({ template, onGenerate, loading, result, e
 
   return (
     <div className="space-y-6">
+      {/* Credit indicator */}
+      <div className="flex items-center justify-between px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-500/10 to-violet-500/10 border border-purple-500/20">
+        <div className="flex items-center gap-2">
+          <span className="text-lg">💎</span>
+          <span className="text-sm font-medium text-gray-300">Cena: <span className="text-white font-bold">1 kredit</span> za generování</span>
+        </div>
+        <span className="text-xs px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 font-semibold">SAMO UI</span>
+      </div>
+
       {/* Prompt builder preview */}
       <div className="px-4 py-2 rounded-lg bg-black/20 border border-white/5 text-[11px] text-gray-500 font-mono leading-relaxed">
         <span className="text-gray-400 font-semibold text-[10px] uppercase tracking-wider">🧠 System Prompt Engine</span>

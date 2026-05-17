@@ -27,8 +27,11 @@
         <a href="#sablony">Šablony</a>
         <a href="/pricing">Ceník</a>
         <a href="/samo-ui" class="btn btn-samo" style="animation: pulse 2s ease-in-out infinite;">🤖 SAMO UI</a>
-        <a href="/login" class="btn btn-outline">Přihlásit se</a>
-        <a href="/register" class="btn btn-primary">Začít zdarma</a>
+        <span id="nav-credits" class="credits-badge" style="display:none">💎 <span id="nav-credits-count">0</span> kreditů</span>
+        <a href="/login" id="nav-login" class="btn btn-outline">Přihlásit se</a>
+        <a href="/register" id="nav-register" class="btn btn-primary">Začít zdarma</a>
+        <a href="/dashboard" id="nav-dashboard" class="btn btn-outline" style="display:none">📊 Panel</a>
+        <button id="nav-logout" class="btn btn-outline" style="display:none" onclick="logout()">Odhlásit se</button>
       </div>
       <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
     </div>
@@ -116,7 +119,7 @@
       <div class="free-trial-card">
         <div class="free-trial-badge">Zdarma</div>
         <h2>Vyzkoušejte <span class="gradient-text">zdarma</span></h2>
-        <p>Zadejte název produktu a AI vám okamžitě vygeneruje ukázkový popis. Bez registrace.</p>
+        <p>Zadejte název produktu a AI vám okamžitě vygeneruje ukázkový popis. Bez registrace. Po registraci získáte <strong>5 kreditů zdarma</strong> pro přístup ke všem šablonám.</p>
         <div class="free-trial-form">
           <div class="form-row">
             <div class="form-group">

@@ -161,6 +161,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nameEl) nameEl.textContent = user.name || 'Uživatel';
     if (tierEl) { const m = { free: 'Zdarma', starter: 'Základní', pro: 'Profesionál', enterprise: 'Enterprise' }; tierEl.textContent = m[user.tier] || 'Zdarma'; }
     if (upgradeEl && user.tier !== 'free') upgradeEl.style.display = 'none';
+
+    // Show nav credits + dashboard, hide login/register
+    const navCredits = document.getElementById('nav-credits');
+    const navCreditsCount = document.getElementById('nav-credits-count');
+    const navLogin = document.getElementById('nav-login');
+    const navRegister = document.getElementById('nav-register');
+    const navDashboard = document.getElementById('nav-dashboard');
+    const navLogout = document.getElementById('nav-logout');
+    if (navCredits) { navCredits.style.display = 'inline-flex'; navCreditsCount.textContent = user.credits || 5; }
+    if (navLogin) navLogin.style.display = 'none';
+    if (navRegister) navRegister.style.display = 'none';
+    if (navDashboard) navDashboard.style.display = 'inline-flex';
+    if (navLogout) navLogout.style.display = 'inline-flex';
   }
 
   // Particle animation
