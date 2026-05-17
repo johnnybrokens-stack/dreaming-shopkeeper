@@ -21,7 +21,7 @@
   --shadow-glow: 0 0 30px var(--primary-glow);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--dark); background: var(--light); line-height: 1.6; overflow-x: hidden; }
 .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
@@ -54,8 +54,9 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 .nav-links a:hover { color: var(--primary); }
 .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
 
-/* Buttons */
-.btn { padding: 14px 28px; border: none; border-radius: var(--radius-sm); font-weight: 700; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; position: relative; overflow: hidden; letter-spacing: 0.3px; }
+/* Buttons - SAMO UI font */
+.btn, button, input[type="submit"], input[type="button"] { font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; touch-action: manipulation; }
+.btn { padding: 14px 28px; border: none; border-radius: var(--radius-sm); font-weight: 700; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; position: relative; overflow: hidden; letter-spacing: 0.5px; white-space: nowrap; }
 .btn::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%); transform: scale(0); opacity: 0; transition: transform 0.5s, opacity 0.5s; border-radius: inherit; }
 .btn:active::after { transform: scale(2.5); opacity: 1; transition: 0s; }
 .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark), #047857); background-size: 200% 200%; animation: btnGradient 3s ease infinite; color: var(--white); box-shadow: 0 6px 20px var(--primary-glow), 0 2px 6px rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.15); }
@@ -335,12 +336,19 @@ footer { background: var(--dark); color: var(--white); padding: 80px 0 24px; }
 .faq-open .faq-answer { max-height: 500px; padding: 0 24px 20px; }
 .faq-answer p { color: var(--gray); line-height: 1.7; font-size: 0.95rem; }
 
-/* Mobile nav fix */
+/* Mobile nav */
 @media (max-width: 768px) {
-  .nav-links.mobile-open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 20px; box-shadow: var(--shadow-lg); z-index: 99; }
-  .nav-links.mobile-open a { display: flex; width: 100%; justify-content: center; }
-  .nav-links.mobile-open a.btn { width: 100%; margin-top: 8px; }
-  .nav-links.mobile-open a.btn-samo { background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; border: none; }
+  .nav-links { display: none; flex-direction: column; align-items: stretch; gap: 10px; }
+  .nav-links.mobile-open { display: flex; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 20px; box-shadow: var(--shadow-lg); z-index: 99; max-height: 90vh; overflow-y: auto; }
+  .nav-links.mobile-open a,
+  .nav-links.mobile-open button,
+  .nav-links.mobile-open .credits-badge { display: flex; width: 100%; justify-content: center; }
+  .nav-links.mobile-open a.btn,
+  .nav-links.mobile-open button.btn { width: 100%; margin-top: 4px; }
+  .nav-links.mobile-open .credits-badge { justify-content: center; padding: 10px 16px; font-size: 0.9rem; }
+  .nav-links.mobile-open a:not(.btn):not(.credits-badge) { padding: 10px 16px; font-size: 1rem; font-weight: 600; color: var(--gray); text-align: center; border-radius: var(--radius-sm); background: var(--light); }
+  .mobile-menu-btn { display: block; z-index: 100; position: relative; }
+  .btn { white-space: normal; word-break: break-word; }
 }
 
 /* Social Share */
@@ -413,8 +421,6 @@ footer { background: var(--dark); color: var(--white); padding: 80px 0 24px; }
   .testimonials-grid, .ethics-grid { grid-template-columns: 1fr; }
   .footer-content { grid-template-columns: 1fr; gap: 30px; }
   .form-grid { grid-template-columns: 1fr; }
-  .nav-links a:not(.btn) { display: none; }
-  .mobile-menu-btn { display: block; }
   .section-header h2 { font-size: 1.8rem; }
   .free-trial-card { padding: 30px 20px; }
   .form-row { flex-direction: column; }
