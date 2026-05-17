@@ -70,6 +70,10 @@ app.get('/pricing', (req, res) => {
   res.sendFile(__dirname + '/public/paywall.html');
 });
 
+app.get('/jak-to-funguje', (req, res) => {
+  res.sendFile(__dirname + '/public/jak-to-funguje.html');
+});
+
 // React app (built) — assets served at /app/, HTML served at /samo-ui
 app.use('/app', express.static(__dirname + '/react-app/dist'));
 app.get('/app/*', (req, res) => {

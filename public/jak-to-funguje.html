@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jak to funguje — Dreaming Shopkeeper</title>
+  <meta name="description" content="Kompletní návod, jak používat Dreaming Shopkeeper — AI copywriter pro české e-shopy.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    .guide { padding: 60px 0; background: var(--light); }
+    .guide-header { text-align: center; margin-bottom: 50px; }
+    .guide-header h1 { font-size: 2.8rem; margin-bottom: 12px; }
+    .guide-header p { color: var(--gray); font-size: 1.15rem; max-width: 600px; margin: 0 auto; }
+    .guide-section { max-width: 800px; margin: 0 auto 50px; background: var(--white); border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow); }
+    .guide-section h2 { font-size: 1.6rem; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .guide-section h2 .step-num { width: 36px; height: 36px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #111; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 900; flex-shrink: 0; }
+    .guide-section h3 { font-size: 1.15rem; margin-bottom: 10px; margin-top: 24px; color: var(--dark); }
+    .guide-section h3:first-of-type { margin-top: 0; }
+    .guide-section p { color: var(--gray); line-height: 1.8; margin-bottom: 12px; }
+    .guide-section ul { list-style: none; padding: 0; margin-bottom: 16px; }
+    .guide-section ul li { padding: 8px 0 8px 28px; position: relative; color: var(--gray); line-height: 1.6; }
+    .guide-section ul li::before { content: '→'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+    .guide-section .tip { background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(16,185,129,0.03)); padding: 16px 20px; border-radius: var(--radius-sm); border-left: 4px solid var(--primary); margin-top: 16px; }
+    .guide-section .tip p { margin: 0; font-size: 0.95rem; }
+    .guide-section .tip strong { color: var(--dark); }
+    .guide-cta { text-align: center; padding: 40px; background: linear-gradient(135deg, var(--dark), var(--dark-light)); border-radius: var(--radius); max-width: 800px; margin: 0 auto; color: var(--white); }
+    .guide-cta h2 { margin-bottom: 12px; }
+    .guide-cta p { color: var(--gray-light); margin-bottom: 24px; }
+    .guide-nav { max-width: 800px; margin: 0 auto 40px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .guide-nav a { padding: 10px 18px; background: var(--white); border-radius: var(--radius-sm); text-decoration: none; color: var(--gray); font-weight: 600; font-size: 0.9rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: all 0.2s; }
+    .guide-nav a:hover { color: var(--primary); box-shadow: var(--shadow); transform: translateY(-2px); }
+    @media (max-width: 768px) {
+      .guide-header h1 { font-size: 2rem; }
+      .guide-section { padding: 24px 20px; }
+      .guide-section h2 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="/" class="logo"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
+      <div class="nav-links">
+        <a href="/samo-ui" class="btn btn-samo">🤖 SAMO UI</a>
+        <a href="/pricing" class="btn btn-outline">Ceník</a>
+        <a href="/login" class="btn btn-outline">Přihlásit se</a>
+        <a href="/register" class="btn btn-primary">Začít zdarma</a>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </nav>
+
+  <section class="guide">
+    <div class="container">
+      <div class="guide-header">
+        <div class="badge">📖 Návod</div>
+        <h1>Jak <span class="gradient-text">Dreaming Shopkeeper</span> funguje</h1>
+        <p>Kompletní průvodce od registrace po první vygenerovaný text.</p>
+      </div>
+
+      <div class="guide-nav">
+        <a href="#co-to-je">Co to je</a>
+        <a href="#registrace">Registrace</a>
+        <a href="#kredity">Kredity</a>
+        <a href="#samo-ui">SAMO UI</a>
+        <a href="#sablony">Šablony</a>
+        <a href="#ukazka">Ukázka zdarma</a>
+        <a href="#cenik">Ceník</a>
+      </div>
+
+      <div class="guide-section" id="co-to-je">
+        <h2><span class="step-num">1</span> Co je Dreaming Shopkeeper?</h2>
+        <p>Dreaming Shopkeeper je AI copywriter specializovaný na české e-shopy. Pomocí umělé inteligence vytvoří profesionální popisy produktů, SEO meta popisky, titulky a e-maily během několika sekund.</p>
+        <p>Všechny texty jsou v profesionální češtině a dodržují etická pravidla reklamy — žádné lživé statistiky, falešné recenze ani klamavé výhody.</p>
+        <div class="tip"><p><strong>💡 Pro koho je určen?</strong> Pro majitele e-shopů, marketéry a všechny, kteří potřebují rychle vytvořit kvalitní texty pro své produkty.</p></div>
+      </div>
+
+      <div class="guide-section" id="registrace">
+        <h2><span class="step-num">2</span> Registrace a přihlášení</h2>
+        <h3>Vytvoření účtu</h3>
+        <p>Klikni na tlačítko <strong>"Začít zdarma"</strong> v pravém horním rohu. Vyplň jméno, e-mail a heslo (minimálně 8 znaků). Po registraci získáš <strong>5 kreditů zdarma</strong> na vyzkoušení všech šablon.</p>
+        <h3>Přihlášení</h3>
+        <p>Pokud už účet máš, klikni na <strong>"Přihlásit se"</strong> a zadej svůj e-mail a heslo.</p>
+        <h3>Zapomenuté heslo</h3>
+        <p>Pokud jsi zapomněl heslo, napiš na <strong>benbrokes.it@gmail.com</strong> a my ti pomůžeme.</p>
+        <div class="tip"><p><strong>🔐 Bezpečnost:</strong> Tvé heslo je šifrováno a nikdy není uloženo v plaintextu.</p></div>
+      </div>
+
+      <div class="guide-section" id="kredity">
+        <h2><span class="step-num">3</span> Kreditový systém</h2>
+        <p>Každý vygenerovaný text stojí <strong>1 kredit</strong>. Nezáleží na tom, zda generuješ popis produktu, titulek nebo e-mail — cena je vždy stejná.</p>
+        <h3>Kolik kreditů mám?</h3>
+        <p>Po přihlášení vidíš svůj zůstatek kreditů v navigaci (💎 badge). Na dashboardu uvidíš podrobnější přehled.</p>
+        <h3>Jak získám více kreditů?</h3>
+        <ul>
+          <li><strong>Zdarma:</strong> 5 kreditů při registraci</li>
+          <li><strong>Základní plán:</strong> 100 kreditů měsíčně za 490 Kč</li>
+          <li><strong>Profesionál plán:</strong> 500 kreditů měsíčně za 1 290 Kč</li>
+          <li><strong>Enterprise:</strong> Neomezené kredity za 3 990 Kč/měsíc</li>
+        </ul>
+        <p>Nespotřebované kredity se převádějí do dalšího měsíce (pouze u placených plánů).</p>
+        <div class="tip"><p><strong>💡 Tip:</strong> Pokud potřebuješ jen vyzkoušet, stačí 5 kreditů zdarma. Pokud tvoříš pravidelně, vyplatí se některý z placených plánů.</p></div>
+      </div>
+
+      <div class="guide-section" id="samo-ui">
+        <h2><span class="step-num">4</span> SAMO UI — Generátor textů</h2>
+        <p>SAMO UI je hlavní rozhraní pro generování textů. Zde si vybereš šablonu, zadáš údaje a AI vytvoří text během pár sekund.</p>
+        <h3>Jak na to:</h3>
+        <ul>
+          <li>Klikni na <strong>"SAMO UI"</strong> v horní navigaci nebo na tlačítko 🤖 SAMO UI</li>
+          <li>Vyber si <strong>šablonu</strong> (Popis produktu, Titulek, SEO meta, E-mail o opuštěném košíku, ...)</li>
+          <li>Vlož <strong>URL produktu</strong> nebo zadej název produktu ručně</li>
+          <li>Volitelně vyplň <strong>cílovou skupinu</strong> a <strong>klíčová slova</strong></li>
+          <li>Klikni na <strong>"Vygenerovat"</strong></li>
+        </ul>
+        <p>AI během pár sekund vytvoří profesionální text. Výsledek si můžeš zkopírovat jedním kliknutím.</p>
+        <h3>Co je to "Deep Extraction Mode"?</h3>
+        <p>U šablony Technické specifikace můžeš zapnout <strong>Deep Extraction Mode</strong>, který z URL produktu vytáhne co nejvíce technických detailů. AI nesmí vymýšlet chybějící údaje — ty budou označeny jako <code>[MISSING_DATA]</code>.</p>
+        <h3>Recenze & Srovnání</h3>
+        <p>Šablona Recenze & Srovnání umožňuje porovnat dva produkty vedle sebe. Stačí zadat dvě URL a AI vytvoří přehledné srovnání včetně výhod a nevýhod.</p>
+        <div class="tip"><p><strong>⚡ Rychlost:</strong> Průměrná doba generování je pod 10 sekund. Pokud generování trvá déle, zkontroluj připojení k internetu.</p></div>
+      </div>
+
+      <div class="guide-section" id="sablony">
+        <h2><span class="step-num">5</span> Šablony</h2>
+        <p>Dreaming Shopkeeper nabízí 4 hlavní šablony (a další v React verzi):</p>
+        <h3>🛍️ Popis produktu</h3>
+        <p>Profesionální popis s chytlavým úvodem, hlavními přínosy, technickými vlastnostmi a silnou výzvou k akci. Délka 200-400 slov.</p>
+        <h3>📌 Poutavý titulek (H1)</h3>
+        <p>5 vysoce konverzních nadpisů pro produkt nebo kategorii zaměřených na přínos, naléhavost, číslo, řešení problému a emoci.</p>
+        <h3>🔍 Meta popisky pro SEO</h3>
+        <p>3 varianty meta titulků a popisků optimalizovaných pro Google, včetně Open Graph tagů.</p>
+        <h3>📧 E-mail o opuštěném košíku</h3>
+        <p>Přesvědčivý e-mail pro znovuzískání zákazníků s opuštěným košíkem, včetně 3 variant předmětu.</p>
+        <h3>📊 Další šablony (SAMO UI)</h3>
+        <p>V SAMO UI jsou k dispozici i šablony <strong>Technické specifikace</strong> a <strong>Recenze & Srovnání</strong>.</p>
+      </div>
+
+      <div class="guide-section" id="ukazka">
+        <h2><span class="step-num">6</span> Ukázka zdarma</h2>
+        <p>Na hlavní stránce najdeš sekci <strong>"Vyzkoušejte zdarma"</strong>, kde můžeš vyzkoušet AI bez registrace. Stačí zadat název produktu a AI okamžitě vygeneruje ukázkový popis.</p>
+        <p>Ukázka je omezená na krátký text (max. 150 slov). Pro plný přístup ke všem šablonám a delším textům se <a href="/register">zaregistruj zdarma</a>.</p>
+        <div class="tip"><p><strong>🎯 Vyzkoušej teď:</strong> Přejdi na <a href="/#free-trial">hlavní stránku</a> a zkus napsat "Bezdrátová sluchátka s ANC".</p></div>
+      </div>
+
+      <div class="guide-section" id="cenik">
+        <h2><span class="step-num">7</span> Ceník a plány</h2>
+        <h3>Zdarma</h3>
+        <p>5 kreditů při registraci, 3 šablony, až 1 500 slov na text, historie 30 dní.</p>
+        <h3>Základní — 490 Kč/měsíc</h3>
+        <p>100 kreditů měsíčně, 3 šablony, až 1 500 slov na text, e-mailová podpora, historie 30 dní.</p>
+        <h3>Profesionál — 1 290 Kč/měsíc</h3>
+        <p>500 kreditů měsíčně, všechny 4 šablony, až 3 000 slov na text, SEO optimalizace, API přístup.</p>
+        <h3>Enterprise — 3 990 Kč/měsíc</h3>
+        <p>Neomezené kredity, vlastní šablony, account manager, white-label, neomezený tým.</p>
+        <p style="margin-top:16px"><a href="/pricing" class="btn btn-primary">Zobrazit kompletní ceník →</a></p>
+        <div class="tip"><p><strong>🛡️ Záruka:</strong> 30denní garance vrácení peněz. Pokud nejsi spokojený, vrátíme ti peníze bez otázek.</p></div>
+      </div>
+
+      <div class="guide-cta">
+        <h2>Připraven začít?</h2>
+        <p>Zaregistruj se zdarma a získej 5 kreditů na vyzkoušení všech šablon.</p>
+        <a href="/register" class="btn btn-white btn-lg">Vytvořit účet zdarma →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer><div class="container">
+    <div class="footer-content" style="grid-template-columns:1fr;text-align:center;margin-bottom:30px">
+      <div class="footer-brand">
+        <a href="/" class="logo" style="justify-content:center"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
+        <p style="margin-bottom:20px">AI copywriter specializovaný na e-commerce.</p>
+        <a href="#" class="email-obf email-text" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#1e293b;padding:10px 20px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);color:#94a3b8;text-decoration:none;font-size:0.95rem">📧 kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Dreaming Shopkeeper. Všechna práva vyhrazena.</p></div>
+  </div></footer>
+
+  <script src="/js/app.js"></script>
+  <script>
+  document.querySelectorAll('.email-obf').forEach(el => {
+    const user = 'benbrokes.it';
+    const domain = 'gmail.com';
+    const mailto = 'mailto:' + user + '@' + domain;
+    el.href = mailto;
+    if (el.classList.contains('email-text')) el.textContent = user + '@' + domain;
+  });
+  </script>
+</body>
+</html>
