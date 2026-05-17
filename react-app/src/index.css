@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Exo 2', 'Inter', system-ui, -apple-system, sans-serif;
   background: #0f172a;
   color: #f8fafc;
 }
 
-button, .btn { font-family: 'Poppins', 'Inter', system-ui, sans-serif; }
+.font-sans { font-family: 'Exo 2', 'Inter', system-ui, sans-serif; }
+button, .btn { font-family: 'Exo 2', 'Inter', system-ui, sans-serif; }
 
 .gradient-text {
   background: linear-gradient(135deg, #10b981, #3b82f6, #f59e0b);
