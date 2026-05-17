@@ -8,6 +8,8 @@ body {
   color: #f8fafc;
 }
 
+button, .btn { font-family: 'Poppins', 'Inter', system-ui, sans-serif; }
+
 .gradient-text {
   background: linear-gradient(135deg, #10b981, #3b82f6, #f59e0b);
   background-size: 200% 200%;

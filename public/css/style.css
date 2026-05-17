@@ -55,7 +55,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
 
 /* Buttons - SAMO UI font */
-.btn, button, input[type="submit"], input[type="button"] { font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; touch-action: manipulation; }
+.btn, button, input[type="submit"], input[type="button"] { font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; touch-action: manipulation; }
 .btn { padding: 14px 28px; border: none; border-radius: var(--radius-sm); font-weight: 700; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; position: relative; overflow: hidden; letter-spacing: 0.5px; white-space: nowrap; }
 .btn::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%); transform: scale(0); opacity: 0; transition: transform 0.5s, opacity 0.5s; border-radius: inherit; }
 .btn:active::after { transform: scale(2.5); opacity: 1; transition: 0s; }
