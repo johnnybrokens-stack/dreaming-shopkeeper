@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obchodní podmínky — Dreaming Shopkeeper</title>
+  <meta name="description" content="Obchodní podmínky služby Dreaming Shopkeeper — AI copywriter pro české e-shopy.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    .legal-page { padding: 60px 0; background: var(--light); }
+    .legal-content { max-width: 800px; margin: 0 auto; background: var(--white); border-radius: var(--radius); padding: 48px; box-shadow: var(--shadow); }
+    .legal-content h1 { font-size: 2rem; margin-bottom: 8px; }
+    .legal-content .last-updated { color: var(--gray); font-size: 0.9rem; margin-bottom: 32px; }
+    .legal-content h2 { font-size: 1.3rem; margin: 32px 0 12px; color: var(--dark); }
+    .legal-content h3 { font-size: 1.1rem; margin: 24px 0 8px; }
+    .legal-content p, .legal-content li { color: var(--gray); line-height: 1.8; font-size: 0.95rem; }
+    .legal-content ul, .legal-content ol { padding-left: 24px; margin-bottom: 16px; }
+    .legal-content li { margin-bottom: 6px; }
+    .legal-content .highlight-box { background: var(--light); padding: 20px; border-radius: var(--radius-sm); border-left: 4px solid var(--primary); margin: 20px 0; }
+    .legal-content .highlight-box p { margin: 0; }
+    .legal-content .warning-box { background: #fef2f2; padding: 20px; border-radius: var(--radius-sm); border-left: 4px solid var(--danger); margin: 20px 0; }
+    .legal-content .warning-box p { margin: 0; color: var(--danger); }
+    .legal-content a { color: var(--primary); }
+    @media (max-width: 768px) {
+      .legal-content { padding: 24px 20px; }
+      .legal-content h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="/" class="logo"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="/">← Zpět</a>
+        <a href="/samo-ui" class="btn btn-samo">🤖 SAMO UI</a>
+        <span id="nav-credits" class="credits-badge" style="display:none">💎 <span id="nav-credits-count">0</span> kreditů</span>
+        <a href="/dashboard" id="nav-dashboard" class="btn btn-outline" style="display:none">📊 Panel</a>
+        <button id="nav-logout" class="btn btn-outline" style="display:none" onclick="logout()">Odhlásit se</button>
+        <a href="/login" id="nav-login" class="btn btn-outline">Přihlásit se</a>
+        <a href="/register" id="nav-register" class="btn btn-primary">Začít zdarma</a>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </nav>
+
+  <section class="legal-page">
+    <div class="container">
+      <div class="legal-content">
+        <h1>Obchodní podmínky</h1>
+        <p class="last-updated">Poslední aktualizace: 18. května 2026</p>
+
+        <div class="warning-box">
+          <p><strong>Důležité upozornění:</strong> Tyto obchodní podmínky upravují vaše používání služby Dreaming Shopkeeper. Prosím, přečtěte si je pozorně před registrací. Registrací nebo používáním služby vyjadřujete souhlas s těmito podmínkami.</p>
+        </div>
+
+        <h2>1. Smluvní strany</h2>
+        <p>
+          <strong>Poskytovatel služby:</strong><br>
+          [LEGAL NAME — doplňte jméno nebo název společnosti]<br>
+          [IČO — doplňte identifikační číslo]<br>
+          [ADDRESS — doplňte sídlo nebo adresu]<br>
+          Email: benbrokes.it@gmail.com<br>
+          (dále jen „Poskytovatel")
+        </p>
+        <p>
+          <strong>Uživatel:</strong><br>
+          Fyzická osoba podnikající nebo právnická osoba starší 18 let, která se zaregistruje na platformě Dreaming Shopkeeper (dále jen „Uživatel").
+        </p>
+
+        <h2>2. Definice</h2>
+        <ul>
+          <li><strong>Služba</strong> — online platforma Dreaming Shopkeeper, která umožňuje generování textů pomocí umělé inteligence (AI) pro e-commerce účely.</li>
+          <li><strong>SAMO UI</strong> — rozhraní pro generování textů (součást Služby).</li>
+          <li><strong>Generovaný obsah</strong> — textový výstup vytvořený AI modelem na základě vstupu zadaného Uživatelem.</li>
+          <li><strong>Kredit</strong> — jednotka spotřeby Služby; 1 kredit = 1 vygenerovaný text.</li>
+          <li><strong>Předplatné</strong> — opakující se platba za přístup k prémiovým funkcím Služby.</li>
+          <li><strong>Účet</strong> — uživatelský profil na platformě Dreaming Shopkeeper.</li>
+        </ul>
+
+        <h2>3. Popis služby</h2>
+        <p>Dreaming Shopkeeper je SaaS aplikace (software jako služba), která pomocí umělé inteligence generuje textový obsah pro e-commerce — popisy produktů, SEO meta tagy, e-maily a další marketingové texty.</p>
+        <p>Služba je dostupná ve čtyřech úrovních: Zdarma, Základní, Profesionál a Enterprise. Podrobnosti jsou uvedeny na stránce <a href="/pricing">Ceník</a>.</p>
+
+        <div class="highlight-box">
+          <p><strong>AI výstup — upozornění:</strong> Generovaný obsah je vytvořen umělou inteligencí a může obsahovat chyby, nepřesnosti nebo neúplné informace. Uživatel je výhradně odpovědný za kontrolu, úpravu a schválení každého Generovaného obsahu před jeho publikací. Poskytovatel neodpovídá za škody vzniklé publikací nekontrolovaného Generovaného obsahu.</p>
+        </div>
+
+        <h2>4. Registrace a účet</h2>
+        <p>Pro používání Služby je nutná registrace. Uživatel se zavazuje:</p>
+        <ul>
+          <li>Poskytnout pravdivé, aktuální a úplné registrační údaje</li>
+          <li>Nezpřístupnit své přihlašovací údaje třetím osobám</li>
+          <li>Nepoužívat Službu k nelegálním účelům</li>
+          <li>Mít alespoň 18 let nebo jednat jménem registrované právnické osoby</li>
+        </ul>
+
+        <h2>5. Kreditový systém a předplatné</h2>
+        <h3>5.1 Kredity</h3>
+        <p>Každý vygenerovaný text spotřebuje 1 Kredit. Kredity jsou přiděleny podle zvoleného plánu:</p>
+        <ul>
+          <li><strong>Zdarma:</strong> 5 kreditů při registraci (jednorázově)</li>
+          <li><strong>Základní:</strong> 100 kreditů měsíčně</li>
+          <li><strong>Profesionál:</strong> 500 kreditů měsíčně</li>
+          <li><strong>Enterprise:</strong> Neomezené kredity</li>
+        </ul>
+
+        <h3>5.2 Předplatné</h3>
+        <p>Placená předplatná se sjednávají na dobu neurčitou s měsíčním platebním obdobím. Platba je prováděna prostřednictvím platební brány Stripe.</p>
+        <ul>
+          <li>Předplatné se automaticky obnovuje každý měsíc</li>
+          <li>Uživatel může předplatné zrušit kdykoli — zrušení se projeví k dalšímu platebnímu období</li>
+          <li>Po zrušení předplatného zůstává Účet aktivní do konce zaplaceného období</li>
+          <li>Nespotřebované kredity z placených plánů se převádějí do dalšího měsíce</li>
+          <li>Kredity z plánu Zdarma se nepřevádějí</li>
+        </ul>
+
+        <h3>5.3 Právo na odstoupení (14 dní)</h3>
+        <p>V souladu s § 1829 zákona č. 89/2012 Sb., občanského zákoníku (NOZ), má Uživatel právo odstoupit od smlouvy bez udání důvodu do 14 dnů od jejího uzavření.</p>
+        <p><strong>Upozornění:</strong> Pokud Uživatel požádá o poskytnutí Služby (generování textů) ještě před uplynutím 14denní lhůty, bere na vědomí, že tím pozbývá právo na odstoupení od smlouvy (§ 1837 písm. l/ NOZ).</p>
+        <p>Pro uplatnění práva na odstoupení kontaktujte Poskytovatele e-mailem na benbrokes.it@gmail.com.</p>
+
+        <h2>6. Duševní vlastnictví a práva k AI výstupům</h2>
+        <h3>6.1 Licence k užívání Služby</h3>
+        <p>Poskytovatel uděluje Uživateli omezenou, nepřevoditelnou, nevýhradní licenci k užívání Služby po dobu trvání tohoto smluvního vztahu.</p>
+
+        <h3>6.2 Práva ke Generovanému obsahu</h3>
+        <p><strong>A. Licence:</strong> Poskytovatel uděluje Uživateli trvalou, celosvětovou, bezúplatnou licenci k užívání, úpravě a komerčnímu využití Generovaného obsahu vytvořeného prostřednictvím jeho Účtu.</p>
+        <p><strong>B. Právní status AI obsahu:</strong> Uživatel bere na vědomí, že právní status Generovaného obsahu vytvořeného umělou inteligencí není v českém ani evropském právu dosud jednoznačně vyřešen. Zejména není zaručeno, že Generovaný obsah splňuje požadavky na autorské dílo podle § 2 zákona č. 121/2000 Sb. (autorský zákon). Poskytovatel neposkytuje žádnou záruku, že Generovaný obsah je chráněn autorským právem nebo že jeho užití neporušuje práva třetích osob.</p>
+        <p><strong>C. Odpovědnost:</strong> Uživatel přebírá plnou odpovědnost za publikaci Generovaného obsahu a za veškerá rizika spojená s porušením práv třetích osob (včetně autorských práv, ochranných známek a práv na ochranu osobnosti).</p>
+        <p><strong>D. Vstupy Uživatele:</strong> Uživatel si ponechává veškerá práva k textům, zadáním a URL produktů, které vloží do Služby. Poskytovateli uděluje licenci k jejich zpracování výhradně za účelem poskytování Služby.</p>
+
+        <h2>7. Etické používání a „Pravdivá reklama"</h2>
+        <p>Platforma je navržena s ohledem na etické principy reklamy. Služba je naprogramována tak, aby:</p>
+        <ul>
+          <li>Nevytvářela falešné statistiky, recenze nebo neověřitelná tvrzení</li>
+          <li>Označovala chybějící technické údaje jako [MISSING_DATA] místo jejich vymýšlení</li>
+          <li>Dodržovala zásady pravdivé reklamy dle zákona č. 40/1995 Sb.</li>
+        </ul>
+        <p><strong>Uživatel však bere na vědomí, že:</strong></p>
+        <ul>
+          <li>AI model může i přes tato opatření vygenerovat nepřesný nebo nevhodný obsah</li>
+          <li>Zodpovědnost za pravdivost a zákonnost publikovaného obsahu nese výhradně Uživatel</li>
+          <li>Pro regulovaná odvětví (doplňky stravy, kosmetika, zdravotnické prostředky, finanční produkty, dětské zboží) doporučujeme právní revizi Generovaného obsahu před publikací</li>
+        </ul>
+
+        <h2>8. Zakázané používání (Acceptable Use Policy)</h2>
+        <p>Uživatel nesmí Službu používat k:</p>
+        <ul>
+          <li>Generování obsahu, který porušuje české nebo slovenské právo (včetně autorského, obchodního a trestního)</li>
+          <li>Generování obsahu, který je diskriminační, hanlivý, obtěžující nebo výhrůžný</li>
+          <li>Generování obsahu pro nelegální produkty nebo služby</li>
+          <li>Generování obsahu, který by mohl uvést spotřebitele v omyl (klamavá reklama)</li>
+          <li>Automatizovanému nebo skriptovanému přístupu bez předchozího písemného souhlasu</li>
+          <li>Pokusům o obcházení bezpečnostních opatření, rate limitingu nebo kreditového systému</li>
+          <li>Zadávání chráněných osobních údajů třetích osob do promptů (AI model není GDPR-compliant pro zpracování osobních údajů)</li>
+          <li>Generování obsahu pro léčivé přípravky na předpis nebo jiné přísně regulované kategorie</li>
+        </ul>
+
+        <h2>9. Odpovědnost a omezení odpovědnosti</h2>
+        <h3>9.1 Vyloučení záruk</h3>
+        <p>Služba je poskytována „tak, jak stojí a leží" („as is"). Poskytovatel neposkytuje žádné záruky, výslovné ani implicitní, pokud jde o:</p>
+        <ul>
+          <li>Nepřetržitou dostupnost Služby (Služba může být dočasně nedostupná z důvodu údržby nebo vyšší moci)</li>
+          <li>Přesnost, úplnost nebo vhodnost Generovaného obsahu pro konkrétní účel</li>
+          <li>To, že Služba bude bez chyb nebo že chyby budou opraveny</li>
+        </ul>
+
+        <h3>9.2 Omezení odpovědnosti</h3>
+        <p>V nejvyšším rozsahu povoleném platným právem Poskytovatel neodpovídá za:</p>
+        <ul>
+          <li>Škody vzniklé publikací nekontrolovaného Generovaného obsahu</li>
+          <li>Ušlý zisk, ztrátu dat nebo přerušení podnikání</li>
+          <li>Škody vzniklé v důsledku porušení těchto podmínek ze strany Uživatele</li>
+        </ul>
+        <p><strong>Celková odpovědnost Poskytovatele z jakéhokoli nároku vyplývajícího z těchto podmínek nebo souvisejícího se Službou je omezena na částku rovnající se 12 měsíčním poplatkům zaplaceným Uživatelem v období 12 měsíců předcházejících vzniku nároku.</strong></p>
+        <p>Toto omezení se nevztahuje na odpovědnost za škodu způsobenou úmyslně nebo z hrubé nedbalosti, na odpovědnost za škodu na zdraví nebo životě, ani na odpovědnost, kterou nelze dle platného práva vyloučit.</p>
+
+        <h2>10. Ukončení smluvního vztahu</h2>
+        <p>Uživatel může svůj Účet zrušit kdykoli prostřednictvím nastavení účtu nebo e-mailem.</p>
+        <p>Poskytovatel může Účet zrušit nebo omezit přístup v případě:</p>
+        <ul>
+          <li>Porušení těchto podmínek Uživatelem</li>
+          <li>Nezaplacení předplatného</li>
+          <li>Nečinnosti Účtu po dobu delší než 12 měsíců</li>
+        </ul>
+        <p>Po ukončení smluvního vztahu Poskytovatel vymaže osobní údaje Uživatele v souladu s <a href="/soukromi">Zásadami ochrany osobních údajů</a>.</p>
+
+        <h2>11. Nahlášení nelegálního obsahu (DSA)</h2>
+        <p>V souladu s Nařízením EU 2022/2065 (Akt o digitálních službách) poskytujeme mechanismus pro nahlášení nelegálního obsahu. Pokud se domníváte, že prostřednictvím Služby byl vygenerován nebo publikován nelegální obsah, nahlaste to prosím na e-mail benbrokes.it@gmail.com s předmětem „DSA — nelegální obsah". Vaše oznámení musí obsahovat:</p>
+        <ul>
+          <li>Popis údajně nelegálního obsahu</li>
+          <li>Umístění (např. URL nebo ID vygenerovaného textu)</li>
+          <li>Důvod, proč se domníváte, že je obsah nelegální</li>
+          <li>Vaše kontaktní údaje</li>
+        </ul>
+        <p>Na oznámení odpovíme do 7 pracovních dnů.</p>
+
+        <h2>12. Řešení sporů a rozhodné právo</h2>
+        <p>Tento smluvní vztah se řídí právním řádem České republiky, zejména zákonem č. 89/2012 Sb., občanským zákoníkem (NOZ), a zákonem č. 634/1992 Sb., o ochraně spotřebitele (pokud je Uživatel spotřebitel).</p>
+        <p>Spory vzniklé z tohoto smluvního vztahu budou řešeny u místně příslušného soudu v České republice, konkrétně u Obvodního soudu pro Prahu (nebo dle bydliště Uživatele, pokud je spotřebitelem).</p>
+        <p>Mimosoudní řešení spotřebitelských sporů: Česká obchodní inspekce, Štěpánská 15, 120 00 Praha 2, <a href="https://www.coi.cz" target="_blank">www.coi.cz</a>.</p>
+
+        <h2>13. Ochrana osobních údajů</h2>
+        <p>Zpracování osobních údajů se řídí našimi <a href="/soukromi">Zásadami ochrany osobních údajů</a>, které jsou nedílnou součástí těchto podmínek.</p>
+
+        <h2>14. Závěrečná ustanovení</h2>
+        <ul>
+          <li>Tyto podmínky nabývají účinnosti dnem jejich zveřejnění a okamžikem registrace Uživatele.</li>
+          <li>Poskytovatel si vyhrazuje právo tyto podmínky jednostranně změnit. O změnách bude Uživatel informován e-mailem nebo oznámením v aplikaci nejméně 14 dní před účinností změn.</li>
+          <li>Pokud je některé ustanovení těchto podmínek neplatné nebo nevymahatelné, nedotýká se to platnosti ostatních ustanovení.</li>
+          <li>Tyto podmínky jsou vyhotoveny v českém jazyce. V případě překladu do jiného jazyka je rozhodující česká verze.</li>
+        </ul>
+
+        <h2>15. Kontakt</h2>
+        <p>
+          <strong>Provozovatel:</strong> [LEGAL NAME], [ADDRESS]<br>
+          <strong>E-mail:</strong> benbrokes.it@gmail.com<br>
+          <strong>GDPR kontakt:</strong> privacy@dreaming-shopkeeper.com
+        </p>
+
+        <p style="margin-top:40px;padding-top:20px;border-top:1px solid #e2e8f0;font-size:0.85rem;color:var(--gray-light)">
+          Tyto obchodní podmínky jsou v souladu se zákonem č. 89/2012 Sb. (občanský zákoník), zákonem č. 634/1992 Sb. (ochrana spotřebitele), zákonem č. 480/2004 Sb. (služby informační společnosti), Nařízením EU 2016/679 (GDPR) a Nařízením EU 2022/2065 (Akt o digitálních službách).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content" style="grid-template-columns:1fr;text-align:center;margin-bottom:30px">
+        <div class="footer-brand">
+          <a href="/" class="logo" style="justify-content:center"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
+          <p style="margin-bottom:20px">AI copywriter specializovaný na e-commerce.</p>
+          <a href="#" class="email-obf email-text" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#1e293b;padding:10px 20px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);color:#94a3b8;text-decoration:none;font-size:0.95rem">📧 kontakt</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Dreaming Shopkeeper. Všechna práva vyhrazena.</p></div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script>
+    document.querySelectorAll('.email-obf').forEach(el => {
+      const user = 'benbrokes.it';
+      const domain = 'gmail.com';
+      el.href = 'mailto:' + user + '@' + domain;
+      if (el.classList.contains('email-text')) el.textContent = user + '@' + domain;
+    });
+  </script>
+</body>
+</html>

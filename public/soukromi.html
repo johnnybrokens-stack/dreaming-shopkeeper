@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zásady ochrany osobních údajů — Dreaming Shopkeeper</title>
+  <meta name="description" content="Zásady zpracování osobních údajů služby Dreaming Shopkeeper v souladu s GDPR a českým právem.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    .legal-page { padding: 60px 0; background: var(--light); }
+    .legal-content { max-width: 800px; margin: 0 auto; background: var(--white); border-radius: var(--radius); padding: 48px; box-shadow: var(--shadow); }
+    .legal-content h1 { font-size: 2rem; margin-bottom: 8px; }
+    .legal-content .last-updated { color: var(--gray); font-size: 0.9rem; margin-bottom: 32px; }
+    .legal-content h2 { font-size: 1.3rem; margin: 32px 0 12px; color: var(--dark); }
+    .legal-content h3 { font-size: 1.1rem; margin: 24px 0 8px; }
+    .legal-content p, .legal-content li { color: var(--gray); line-height: 1.8; font-size: 0.95rem; }
+    .legal-content ul, .legal-content ol { padding-left: 24px; margin-bottom: 16px; }
+    .legal-content li { margin-bottom: 6px; }
+    .legal-content .highlight-box { background: var(--light); padding: 20px; border-radius: var(--radius-sm); border-left: 4px solid var(--primary); margin: 20px 0; }
+    .legal-content .highlight-box p { margin: 0; }
+    .legal-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
+    .legal-content th, .legal-content td { border: 1px solid #e2e8f0; padding: 12px; text-align: left; }
+    .legal-content th { background: var(--light); font-weight: 600; }
+    .legal-content a { color: var(--primary); }
+    @media (max-width: 768px) {
+      .legal-content { padding: 24px 20px; }
+      .legal-content h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="/" class="logo"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="/">← Zpět</a>
+        <a href="/samo-ui" class="btn btn-samo">🤖 SAMO UI</a>
+        <span id="nav-credits" class="credits-badge" style="display:none">💎 <span id="nav-credits-count">0</span> kreditů</span>
+        <a href="/dashboard" id="nav-dashboard" class="btn btn-outline" style="display:none">📊 Panel</a>
+        <button id="nav-logout" class="btn btn-outline" style="display:none" onclick="logout()">Odhlásit se</button>
+        <a href="/login" id="nav-login" class="btn btn-outline">Přihlásit se</a>
+        <a href="/register" id="nav-register" class="btn btn-primary">Začít zdarma</a>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </nav>
+
+  <section class="legal-page">
+    <div class="container">
+      <div class="legal-content">
+        <h1>Zásady ochrany osobních údajů</h1>
+        <p class="last-updated">Poslední aktualizace: 18. května 2026</p>
+
+        <div class="highlight-box">
+          <p><strong>Shrnutí pro váš e-shop:</strong> Tento dokument vysvětluje, jak Dreaming Shopkeeper zpracovává vaše osobní údaje. Zpracováváme jen to, co je nezbytné pro provoz služby — váš e-mail, jméno a údaje o využívání. Vaše data nikomu neprodáváme.</p>
+        </div>
+
+        <h2>1. Správce osobních údajů</h2>
+        <p>
+          <strong>Provozovatel služby (správce):</strong><br>
+          [LEGAL NAME — doplňte jméno nebo název společnosti]<br>
+          [IČO — doplňte identifikační číslo]<br>
+          [ADDRESS — doplňte sídlo nebo adresu]<br>
+          Email: privacy@dreaming-shopkeeper.com<br>
+          Telefon: [TELEFON — nepovinné]
+        </p>
+        <p>Provozovatel je správcem osobních údajů ve smyslu Nařízení Evropského parlamentu a Rady (EU) 2016/679 o ochraně fyzických osob v souvislosti se zpracováním osobních údajů (dále jen „GDPR") a zákona č. 110/2019 Sb., o zpracování osobních údajů.</p>
+
+        <h2>2. Jaké údaje zpracováváme a proč</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Kategorie údajů</th>
+              <th>Konkrétní údaje</th>
+              <th>Účel zpracování</th>
+              <th>Právní základ</th>
+              <th>Doba uchování</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Registrační údaje</strong></td>
+              <td>Jméno, e-mailová adresa, hashované heslo</td>
+              <td>Vytvoření a správa uživatelského účtu, přihlašování, zasílání transakčních emailů</td>
+              <td>Plnění smlouvy (čl. 6 odst. 1 písm. b GDPR)</td>
+              <td>Po dobu trvání účtu + 3 roky po jeho zrušení</td>
+            </tr>
+            <tr>
+              <td><strong>Platební údaje</strong></td>
+              <td>Fakturační údaje (jméno, adresa, IČO, DIČ)</td>
+              <td>Vystavení faktur a plnění účetních povinností</td>
+              <td>Plnění právní povinnosti (čl. 6 odst. 1 písm. c GDPR)</td>
+              <td>10 let od vystavení (dle zákona o účetnictví)</td>
+            </tr>
+            <tr>
+              <td><strong>Platební karty</strong></td>
+              <td>Zpracovává výhradně Stripe — my nevidíme čísla karet ani CVV</td>
+              <td>Zpracování plateb za předplatné</td>
+              <td>Plnění smlouvy (čl. 6 odst. 1 písm. b GDPR)</td>
+              <td>Nezpracováváme — Stripe je samostatný správce</td>
+            </tr>
+            <tr>
+              <td><strong>Obsah generovaný AI</strong></td>
+              <td>Texty, promptová zadání, URL produktů, klíčová slova</td>
+              <td>Poskytování služby generování textů, zlepšování kvality výstupů</td>
+              <td>Plnění smlouvy (čl. 6 odst. 1 písm. b GDPR)</td>
+              <td>Po dobu trvání účtu + 30 dní</td>
+            </tr>
+            <tr>
+              <td><strong>Technické údaje</strong></td>
+              <td>IP adresa, typ prohlížeče, verze OS, čas přístupu, cookie ID</td>
+              <td>Zabezpečení služby, diagnostika chyb, prevence zneužití</td>
+              <td>Oprávněný zájem (čl. 6 odst. 1 písm. f GDPR)</td>
+              <td>30 dní (IP adresy), jinak po dobu relace</td>
+            </tr>
+            <tr>
+              <td><strong>Analytické údaje</strong></td>
+              <td>Stránky navštívené v rámci služby, doba na stránce, interakce</td>
+              <td>Zlepšování uživatelského zážitku, analýza využití funkce</td>
+              <td>Souhlas (čl. 6 odst. 1 písm. a GDPR — pokud jsou cookies)</td>
+              <td>Dle nastavení analytického nástroje</td>
+            </tr>
+            <tr>
+              <td><strong>Marketingové údaje</strong></td>
+              <td>E-mail (pouze s výslovným souhlasem)</td>
+              <td>Zasílání newsletterů a nabídek</td>
+              <td>Souhlas (čl. 6 odst. 1 písm. a GDPR)</td>
+              <td>Do odvolání souhlasu</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>3. Zpracovatelé osobních údajů</h2>
+        <p>Při poskytování služby využíváme tyto zpracovatele (subdodavatele):</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Zpracovatel</th>
+              <th>Účel zpracování</th>
+              <th>Předávané údaje</th>
+              <th>Země</th>
+              <th>Záruka bezpečnosti</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Render.com (Render Services, Inc.)</strong></td>
+              <td>Hosting aplikace a databáze</td>
+              <td>Všechny údaje uvedené v bodě 2</td>
+              <td>USA</td>
+              <td>EU-US Data Privacy Framework, Standardní smluvní doložky (SCC)</td>
+            </tr>
+            <tr>
+              <td><strong>Google LLC (Google Cloud, Firebase Auth)</strong></td>
+              <td>OAuth přihlašování (není aktivní), infrastruktura</td>
+              <td>E-mail při OAuth přihlášení</td>
+              <td>USA</td>
+              <td>EU-US Data Privacy Framework, SCC</td>
+            </tr>
+            <tr>
+              <td><strong>Stripe, Inc.</strong></td>
+              <td>Zpracování plateb</td>
+              <td>E-mail, jméno, adresa (ne číslo karty)</td>
+              <td>USA</td>
+              <td>EU-US Data Privacy Framework, SCC, Stripe je PCI DSS Level 1</td>
+            </tr>
+            <tr>
+              <td><strong>Groq, Inc. (GroqCloud)</strong></td>
+              <td>Poskytování AI modelu pro generování textů</td>
+              <td>Promptová zadání (ne osobní údaje)</td>
+              <td>USA</td>
+              <td>SCC, smluvní doložka o nezahrnování osobních údajů</td>
+            </tr>
+            <tr>
+              <td><strong>GitHub, Inc.</strong></td>
+              <td>Úložiště zdrojového kódu, CI/CD</td>
+              <td>Žádné osobní údaje uživatelů</td>
+              <td>USA</td>
+              <td>EU-US Data Privacy Framework</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box">
+          <p><strong>Předávání údajů do USA:</strong> Všichni výše uvedení zpracovatelé sídlí ve Spojených státech. Předávání je zabezpečeno prostřednictvím <strong>EU-US Data Privacy Framework</strong> (DPF) a/nebo <strong>Standardních smluvních doložek (SCC)</strong> dle Rozhodnutí Komise (EU) 2021/914. Aktuální certifikaci DPF můžete ověřit na <a href="https://www.dataprivacyframework.gov/" target="_blank">www.dataprivacyframework.gov</a>.</p>
+        </div>
+
+        <h2>4. Cookies a podobné technologie</h2>
+        <p>Používáme tyto typy cookies:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Typ cookie</th>
+              <th>Název</th>
+              <th>Účel</th>
+              <th>Doba trvání</th>
+              <th>Kategorie</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Relace</td>
+              <td><code>connect.sid</code></td>
+              <td>Udržení přihlášení</td>
+              <td>Do zavření prohlížeče</td>
+              <td>Nezbytné</td>
+            </tr>
+            <tr>
+              <td>Lokální úložiště</td>
+              <td><code>cf_token</code></td>
+              <td>Uložení autentizačního tokenu</td>
+              <td>Do odhlášení</td>
+              <td>Nezbytné</td>
+            </tr>
+            <tr>
+              <td>Lokální úložiště</td>
+              <td><code>cookie_consent</code></td>
+              <td>Uložení souhlasu s cookies</td>
+              <td>1 rok</td>
+              <td>Nezbytné</td>
+            </tr>
+            <tr>
+              <td>Analytické</td>
+              <td>— (není aktivní)</td>
+              <td>Rezervováno pro budoucí analýzu</td>
+              <td>—</td>
+              <td>Analytické (vyžaduje souhlas)</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Podrobnější informace najdete v <a href="/zasady-cookies">Zásadách používání cookies</a>.</p>
+
+        <h2>5. Vaše práva podle GDPR</h2>
+        <p>Jako subjekt údajů máte následující práva:</p>
+        <ol>
+          <li><strong>Právo na přístup (čl. 15 GDPR)</strong> — Můžete nás požádat o potvrzení, zda zpracováváme vaše osobní údaje, a o kopii těchto údajů.</li>
+          <li><strong>Právo na opravu (čl. 16 GDPR)</strong> — Můžete požadovat opravu nepřesných nebo neúplných osobních údajů.</li>
+          <li><strong>Právo na výmaz („právo být zapomenut", čl. 17 GDPR)</strong> — Můžete požadovat výmaz svých osobních údajů, pokud již nejsou potřebné pro účel, pro který byly zpracovány.</li>
+          <li><strong>Právo na omezení zpracování (čl. 18 GDPR)</strong> — Můžete požadovat omezení zpracování v určitých případech (např. při napadení přesnosti údajů).</li>
+          <li><strong>Právo na přenositelnost údajů (čl. 20 GDPR)</strong> — Máte právo obdržet své osobní údaje ve strukturovaném, běžně používaném formátu (JSON).</li>
+          <li><strong>Právo vznést námitku (čl. 21 GDPR)</strong> — Můžete vznést námitku proti zpracování založenému na oprávněném zájmu.</li>
+          <li><strong>Právo odvolat souhlas</strong> — Pokud zpracováváme vaše údaje na základě souhlasu (např. marketing), můžete tento souhlas kdykoli odvolat, aniž by to ovlivnilo zákonnost zpracování před odvoláním.</li>
+          <li><strong>Automatizované rozhodování</strong> — Nevyužíváme automatizované rozhodování, které by mělo právní účinky na uživatele.</li>
+        </ol>
+
+        <h2>6. Jak uplatnit svá práva</h2>
+        <p>Svá práva můžete uplatnit:</p>
+        <ul>
+          <li><strong>E-mailem:</strong> privacy@dreaming-shopkeeper.com</li>
+          <li><strong>Prostřednictvím účtu:</strong> Po přihlášení můžete v nastavení požádat o výmaz účtu (funkce bude brzy k dispozici).</li>
+        </ul>
+        <p>Na vaši žádost odpovíme do 30 dnů. V případě opakovaných nebo zjevně nedůvodných žádostí si vyhrazujeme právo účtovat přiměřený poplatek.</p>
+
+        <h2>7. Stížnost u dozorového úřadu</h2>
+        <p>Máte právo podat stížnost u dozorového úřadu, pokud se domníváte, že zpracování vašich osobních údajů porušuje GDPR:</p>
+        <p>
+          <strong>Úřad pro ochranu osobních údajů (ÚOOÚ)</strong><br>
+          Pplk. Sochora 27, 170 00 Praha 7<br>
+          Web: <a href="https://www.uoou.cz" target="_blank">www.uoou.cz</a><br>
+          Email: posta@uoou.cz
+        </p>
+
+        <h2>8. Zabezpečení údajů</h2>
+        <p>Přijali jsme následující technická a organizační opatření:</p>
+        <ul>
+          <li>Šifrování hesel pomocí bcrypt (hash + sůl)</li>
+          <li>HTTPS spojení (TLS 1.3) na celém webu</li>
+          <li>API rate limiting proti zneužití</li>
+          <li>Pravidelné aktualizace závislostí</li>
+          <li>Přístup k databázi chráněn autentizací</li>
+          <li>Minimální princip — zpracováváme jen údaje nezbytné pro provoz</li>
+        </ul>
+
+        <h2>9. Profilování a automatizované rozhodování</h2>
+        <p>Neprovádíme profilování ani automatizované rozhodování, které by mělo právní účinky. AI model generuje text na základě vašeho zadání — nejedná se o profilování ve smyslu GDPR.</p>
+
+        <h2>10. Změny těchto zásad</h2>
+        <p>Tyto zásady můžeme čas od času aktualizovat. O významných změnách vás budeme informovat e-mailem nebo oznámením v aplikaci. Doporučujeme pravidelně kontrolovat tuto stránku.</p>
+
+        <h2>11. Kontakt</h2>
+        <p>
+          V případě jakýchkoli dotazů ohledně ochrany osobních údajů nás kontaktuje:<br>
+          <strong>E-mail:</strong> privacy@dreaming-shopkeeper.com<br>
+          <strong>Provozovatel:</strong> [LEGAL NAME], [ADDRESS]
+        </p>
+
+        <p style="margin-top:40px;padding-top:20px;border-top:1px solid #e2e8f0;font-size:0.85rem;color:var(--gray-light)">
+          Tento dokument byl vytvořen v souladu s GDPR (Nařízení EU 2016/679), zákonem č. 110/2019 Sb., o zpracování osobních údajů, a zákonem č. 480/2004 Sb., o službách informační společnosti.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content" style="grid-template-columns:1fr;text-align:center;margin-bottom:30px">
+        <div class="footer-brand">
+          <a href="/" class="logo" style="justify-content:center"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
+          <p style="margin-bottom:20px">AI copywriter specializovaný na e-commerce.</p>
+          <a href="#" class="email-obf email-text" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#1e293b;padding:10px 20px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);color:#94a3b8;text-decoration:none;font-size:0.95rem">📧 kontakt</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Dreaming Shopkeeper. Všechna práva vyhrazena.</p></div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script>
+    document.querySelectorAll('.email-obf').forEach(el => {
+      const user = 'benbrokes.it';
+      const domain = 'gmail.com';
+      el.href = 'mailto:' + user + '@' + domain;
+      if (el.classList.contains('email-text')) el.textContent = user + '@' + domain;
+    });
+  </script>
+</body>
+</html>

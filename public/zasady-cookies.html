@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zásady používání cookies — Dreaming Shopkeeper</title>
+  <meta name="description" content="Zásady používání cookies na platformě Dreaming Shopkeeper.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    .legal-page { padding: 60px 0; background: var(--light); }
+    .legal-content { max-width: 800px; margin: 0 auto; background: var(--white); border-radius: var(--radius); padding: 48px; box-shadow: var(--shadow); }
+    .legal-content h1 { font-size: 2rem; margin-bottom: 8px; }
+    .legal-content .last-updated { color: var(--gray); font-size: 0.9rem; margin-bottom: 32px; }
+    .legal-content h2 { font-size: 1.3rem; margin: 32px 0 12px; color: var(--dark); }
+    .legal-content h3 { font-size: 1.1rem; margin: 24px 0 8px; }
+    .legal-content p, .legal-content li { color: var(--gray); line-height: 1.8; font-size: 0.95rem; }
+    .legal-content ul, .legal-content ol { padding-left: 24px; margin-bottom: 16px; }
+    .legal-content li { margin-bottom: 6px; }
+    .legal-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
+    .legal-content th, .legal-content td { border: 1px solid #e2e8f0; padding: 12px; text-align: left; }
+    .legal-content th { background: var(--light); font-weight: 600; }
+    .legal-content a { color: var(--primary); }
+    @media (max-width: 768px) {
+      .legal-content { padding: 24px 20px; }
+      .legal-content h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="/" class="logo"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="/">← Zpět</a>
+        <a href="/samo-ui" class="btn btn-samo">🤖 SAMO UI</a>
+        <span id="nav-credits" class="credits-badge" style="display:none">💎 <span id="nav-credits-count">0</span> kreditů</span>
+        <a href="/dashboard" id="nav-dashboard" class="btn btn-outline" style="display:none">📊 Panel</a>
+        <button id="nav-logout" class="btn btn-outline" style="display:none" onclick="logout()">Odhlásit se</button>
+        <a href="/login" id="nav-login" class="btn btn-outline">Přihlásit se</a>
+        <a href="/register" id="nav-register" class="btn btn-primary">Začít zdarma</a>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </nav>
+
+  <section class="legal-page">
+    <div class="container">
+      <div class="legal-content">
+        <h1>Zásady používání cookies</h1>
+        <p class="last-updated">Poslední aktualizace: 18. května 2026</p>
+
+        <p>Tento dokument vysvětluje, jaké cookies a podobné technologie používáme na platformě Dreaming Shopkeeper, k čemu je používáme a jak můžete svou volbu změnit.</p>
+
+        <h2>1. Co jsou cookies?</h2>
+        <p>Cookies jsou malé textové soubory, které se ukládají do vašeho zařízení (počítač, telefon, tablet) při návštěvě webové stránky. Umožňují webu si „pamatovat" vaše akce a preference po určitou dobu.</p>
+
+        <h2>2. Jaké cookies používáme?</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Název</th>
+              <th>Typ</th>
+              <th>Účel</th>
+              <th>Doba trvání</th>
+              <th>Kategorie</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>connect.sid</code></td>
+              <td>HTTP cookie (serverová)</td>
+              <td>Udržení přihlášení — session ID</td>
+              <td>Do zavření prohlížeče</td>
+              <td>Nezbytné</td>
+            </tr>
+            <tr>
+              <td><code>cf_token</code></td>
+              <td>Lokální úložiště (localStorage)</td>
+              <td>Autentizační token pro API volání</td>
+              <td>Do odhlášení nebo 30 dní</td>
+              <td>Nezbytné</td>
+            </tr>
+            <tr>
+              <td><code>cf_user</code></td>
+              <td>Lokální úložiště (localStorage)</td>
+              <td>Základní informace o uživateli (jméno, kredity)</td>
+              <td>Do odhlášení</td>
+              <td>Nezbytné</td>
+            </tr>
+            <tr>
+              <td><code>cookie_consent</code></td>
+              <td>Lokální úložiště (localStorage)</td>
+              <td>Uložení vašeho souhlasu s cookies</td>
+              <td>1 rok</td>
+              <td>Nezbytné</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Poznámka:</strong> V současné době nepoužíváme žádné analytické ani marketingové cookies třetích stran. Pokud je v budoucnu zavedeme, budeme před jejich nasazením vyžadovat váš výslovný souhlas.</p>
+
+        <h2>3. Kategorie cookies</h2>
+        <h3>3.1 Nezbytné (vždy aktivní)</h3>
+        <p>Tyto cookies jsou nezbytné pro fungování webové stránky. Umožňují přihlášení, navigaci a přístup k zabezpečeným částem stránky. Bez těchto cookies by služba nemohla správně fungovat. Ukládají se na základě oprávněného zájmu (§ 89 odst. 3 zákona č. 127/2005 Sb.).</p>
+
+        <h3>3.2 Analytické (vyžadují souhlas)</h3>
+        <p>Tyto cookies by nám pomohly pochopit, jak uživatelé službu používají, abychom ji mohli zlepšovat. V současnosti nejsou aktivní. Pokud je v budoucnu nasadíme, vyžádáme si váš předchozí souhlas.</p>
+
+        <h3>3.3 Marketingové (vyžadují souhlas)</h3>
+        <p>Tyto cookies by sloužily k zobrazování relevantních nabídek. V současnosti nejsou aktivní.</p>
+
+        <h2>4. Jak spravovat cookies?</h2>
+        <p>Při první návštěvě webu se zobrazí banner s možnostmi:</p>
+        <ul>
+          <li><strong>Přijmout vše</strong> — udělíte souhlas se všemi kategoriemi cookies</li>
+          <li><strong>Odmítnout vše</strong> — přijmete pouze nezbytné cookies</li>
+          <li><strong>Nastavení</strong> — můžete si vybrat, které kategorie povolíte</li>
+        </ul>
+        <p>Svou volbu můžete kdykoli změnit kliknutím na odkaz <strong>„Nastavení cookies"</strong> v zápatí stránky.</p>
+
+        <h2>5. Cookies třetích stran</h2>
+        <p>Některé služby, které používáme (např. Google Fonts, Stripe), mohou ukládat vlastní cookies. Nemáme nad nimi kontrolu — doporučujeme zkontrolovat jejich zásady ochrany osobních údajů:</p>
+        <ul>
+          <li><strong>Stripe:</strong> <a href="https://stripe.com/cookies" target="_blank">stripe.com/cookies</a></li>
+          <li><strong>Google Fonts:</strong> <a href="https://developers.google.com/fonts/faq#what_does_using_the_google_fonts_api_mean_for_the_privacy_of_my_users" target="_blank">Google Fonts FAQ</a></li>
+          <li><strong>Render.com:</strong> <a href="https://render.com/privacy" target="_blank">render.com/privacy</a></li>
+        </ul>
+
+        <h2>6. Změny těchto zásad</h2>
+        <p>Tyto zásady můžeme aktualizovat. O významných změnách vás budeme informovat. Aktuální verze je vždy k dispozici na této stránce.</p>
+
+        <h2>7. Kontakt</h2>
+        <p>
+          Máte-li dotazy ohledně cookies, kontaktujte nás:<br>
+          <strong>E-mail:</strong> privacy@dreaming-shopkeeper.com
+        </p>
+
+        <p style="margin-top:40px;padding-top:20px;border-top:1px solid #e2e8f0;font-size:0.85rem;color:var(--gray-light)">
+          V souladu s § 89 zákona č. 127/2005 Sb. o elektronických komunikacích a Nařízením EU 2016/679 (GDPR).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content" style="grid-template-columns:1fr;text-align:center;margin-bottom:30px">
+        <div class="footer-brand">
+          <a href="/" class="logo" style="justify-content:center"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
+          <p style="margin-bottom:20px">AI copywriter specializovaný na e-commerce.</p>
+          <a href="#" class="email-obf email-text" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#1e293b;padding:10px 20px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);color:#94a3b8;text-decoration:none;font-size:0.95rem">📧 kontakt</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Dreaming Shopkeeper. Všechna práva vyhrazena.</p></div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script>
+    document.querySelectorAll('.email-obf').forEach(el => {
+      const user = 'benbrokes.it';
+      const domain = 'gmail.com';
+      el.href = 'mailto:' + user + '@' + domain;
+      if (el.classList.contains('email-text')) el.textContent = user + '@' + domain;
+    });
+  </script>
+</body>
+</html>

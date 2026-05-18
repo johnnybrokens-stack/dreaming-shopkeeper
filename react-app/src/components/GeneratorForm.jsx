@@ -67,6 +67,9 @@ function ResultBlock({ output, wordCount }) {
         style={{ background: '#1e3a5f' }}
         dangerouslySetInnerHTML={{ __html: formatted }}
       />
+      <div className="px-5 py-2 bg-red-900/20 border-t border-red-500/20 text-xs text-red-300 flex items-center gap-2">
+        <span>⚠️</span> Text je vygenerovaný AI a může obsahovat nepřesnosti. Před publikací vždy zkontrolujte.
+      </div>
     </div>
   )
 }

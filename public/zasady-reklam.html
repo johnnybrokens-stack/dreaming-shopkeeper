@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zásady reklamní etiky — Dreaming Shopkeeper</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    .legal-page { padding: 60px 0; background: var(--light); }
+    .legal-content { max-width: 800px; margin: 0 auto; background: var(--white); border-radius: var(--radius); padding: 48px; box-shadow: var(--shadow); }
+    .legal-content h1 { font-size: 2rem; margin-bottom: 8px; }
+    .legal-content .last-updated { color: var(--gray); font-size: 0.9rem; margin-bottom: 32px; }
+    .legal-content h2 { font-size: 1.3rem; margin: 32px 0 12px; }
+    .legal-content p, .legal-content li { color: var(--gray); line-height: 1.8; font-size: 0.95rem; }
+    .legal-content ul { padding-left: 24px; margin-bottom: 16px; }
+    .legal-content li { margin-bottom: 6px; }
+    .legal-content a { color: var(--primary); }
+    @media (max-width: 768px) { .legal-content { padding: 24px 20px; } .legal-content h1 { font-size: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="/" class="logo"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="/">← Zpět</a>
+        <a href="/samo-ui" class="btn btn-samo">🤖 SAMO UI</a>
+        <a href="/login" id="nav-login" class="btn btn-outline">Přihlásit se</a>
+        <a href="/register" id="nav-register" class="btn btn-primary">Začít zdarma</a>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </nav>
+  <section class="legal-page">
+    <div class="container">
+      <div class="legal-content">
+        <h1>Zásady reklamní etiky</h1>
+        <p class="last-updated">Poslední aktualizace: 18. května 2026</p>
+        <p>Dreaming Shopkeeper je navržen s ohledem na etické principy reklamy a pravdivou komunikaci. Tento dokument popisuje, jak přistupujeme k etickým otázkám při generování textů.</p>
+        <h2>1. Pravdivá reklama</h2>
+        <p>Řídíme se zákonem č. 40/1995 Sb., o regulaci reklamy, a Kodexem reklamy vydaným Radou pro reklamu. Naše AI je naprogramována tak, aby:</p>
+        <ul>
+          <li>Nevytvářela falešné statistiky nebo neověřitelná tvrzení</li>
+          <li>Negenerovala falešné recenze ("5 hvězdiček od 1000 zákazníků")</li>
+          <li>Nepoužívala klamavé praktiky typu "nejlepší na trhu" bez kontextu</li>
+          <li>Označovala chybějící technické údaje jako [MISSING_DATA]</li>
+        </ul>
+        <h2>2. Soulad s právem</h2>
+        <p>Generované texty by měly být v souladu s platnou legislativou ČR a EU. Uživatel je však výhradně odpovědný za kontrolu a schválení každého textu před publikací. Zvláštní opatrnost doporučujeme u regulovaných odvětví.</p>
+        <h2>3. Odpovědnost uživatele</h2>
+        <p>Uživatel bere na vědomí, že AI model může generovat nepřesnosti. Veškeré výstupy je nutné před publikací zkontrolovat. Provozovatel nenese odpovědnost za obsah publikovaný uživatelem.</p>
+        <h2>4. Kontakt</h2>
+        <p>Pro hlášení etických problémů: benbrokes.it@gmail.com</p>
+      </div>
+    </div>
+  </section>
+  <footer><div class="container">
+    <div class="footer-content" style="grid-template-columns:1fr;text-align:center;margin-bottom:30px">
+      <div class="footer-brand">
+        <a href="/" class="logo" style="justify-content:center"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
+        <p style="margin-bottom:20px">AI copywriter specializovaný na e-commerce.</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Dreaming Shopkeeper</p></div>
+  </div></footer>
+  <script src="/js/app.js"></script>
+</body>
+</html>

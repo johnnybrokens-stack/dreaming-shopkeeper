@@ -55,12 +55,18 @@ app.use('/api/content', contentRoutes);
 app.use('/api/payment', paymentRoutes.router);
 app.use('/api/reviews', reviewRoutes);
 
-// GDPR stub pages
-const legalPages = { soukromi: 'Zásady ochrany osobních údajů', podminky: 'Obchodní podmínky', 'zasady-reklam': 'Zásady reklamní etiky' };
-Object.keys(legalPages).forEach(key => {
-  app.get(`/${key}`, (req, res) => {
-    res.send(`<!DOCTYPE html><html lang="cs"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>${legalPages[key]} — Dreaming Shopkeeper</title><link rel="stylesheet" href="/css/style.css"></head><body><nav class="navbar"><div class="container nav-container"><a href="/" class="logo"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a><div class="nav-links"><a href="/">← Zpět</a></div></div></nav><section style="padding:60px 0"><div class="container" style="max-width:800px"><h1 style="margin-bottom:24px">${legalPages[key]}</h1><p style="color:var(--gray);margin-bottom:20px;font-style:italic">Tato stránka je připravována. Brzy zde budou kompletní informace.</p><p style="color:var(--gray);line-height:1.8">Prozatím nás kontaktujte na <a href="mailto:benbrokes.it@gmail.com">benbrokes.it@gmail.com</a> pro veškeré dotazy týkající se ochrany osobních údajů a právních náležitostí.</p></div></section><footer style="padding:40px 0;background:var(--dark);color:var(--white);text-align:center"><div class="container"><p>&copy; 2026 Dreaming Shopkeeper</p></div></footer></body></html>`);
-  });
+// Legal pages — real documents replacing stubs
+app.get('/soukromi', (req, res) => {
+  res.sendFile(__dirname + '/public/soukromi.html');
+});
+app.get('/podminky', (req, res) => {
+  res.sendFile(__dirname + '/public/podminky.html');
+});
+app.get('/zasady-reklam', (req, res) => {
+  res.sendFile(__dirname + '/public/zasady-reklam.html');
+});
+app.get('/zasady-cookies', (req, res) => {
+  res.sendFile(__dirname + '/public/zasady-cookies.html');
 });
 
 // Pages

@@ -14,10 +14,14 @@ const loginLimiter = rateLimit({
 
 router.post('/register', async (req, res) => {
   try {
-    const { email, password, name } = req.body;
+    const { email, password, name, termsAccepted } = req.body;
 
     if (!email || !password || !name) {
       return res.status(400).json({ error: 'E-mail, heslo a jméno jsou povinné' });
+    }
+
+    if (!termsAccepted) {
+      return res.status(400).json({ error: 'Pro registraci je nutné souhlasit s obchodními podmínkami' });
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

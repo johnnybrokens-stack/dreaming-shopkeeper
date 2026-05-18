@@ -40,8 +40,10 @@ async function handleRegister(e) {
   const name = document.getElementById('register-name').value;
   const email = document.getElementById('register-email').value;
   const password = document.getElementById('register-password').value;
+  const termsEl = document.getElementById('register-terms');
+  if (termsEl && !termsEl.checked) { alert('Pro registraci je nutné souhlasit s obchodními podmínkami.'); return; }
   try {
-    const res = await fetch('/api/auth/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, email, password }) });
+    const res = await fetch('/api/auth/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, email, password, termsAccepted: true }) });
     const data = await res.json();
     if (!res.ok) { alert(data.error || 'Registrace selhala'); return; }
     token = data.token;
@@ -241,6 +243,7 @@ async function loadReviews() {
 
 // Initialize on load
 document.addEventListener('DOMContentLoaded', () => {
+  initCookieConsent();
   loadReviews();
 
   const modal = document.getElementById('auth-modal');
@@ -319,3 +322,133 @@ function animateCounter(el, target) {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && e.target.id === 'free-topic') generateFreeSample();
 });
+
+/* ─── Cookie Consent Banner ─── */
+const COOKIE_CONSENT_KEY = 'cookie_consent';
+
+function getCookieConsent() {
+  try { return JSON.parse(localStorage.getItem(COOKIE_CONSENT_KEY)) || null; }
+  catch { return null; }
+}
+
+function setCookieConsent(prefs) {
+  localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(prefs));
+}
+
+function getDefaultConsent() {
+  return { necessary: true, analytics: false, marketing: false };
+}
+
+function showCookieBanner() {
+  const existing = document.getElementById('cookie-banner');
+  if (existing) existing.remove();
+
+  const banner = document.createElement('div');
+  banner.id = 'cookie-banner';
+  banner.className = 'cookie-banner';
+  banner.innerHTML = `
+    <div class="cookie-banner-inner">
+      <div class="cookie-banner-text">
+        <strong>🍪 Tento web používá cookies</strong><br>
+        Používáme nezbytné cookies pro fungování služby. Analytické a marketingové cookies používáme pouze s vaším souhlasem.
+        <a href="/zasady-cookies">Více informací</a>
+      </div>
+      <div class="cookie-banner-buttons">
+        <button class="btn btn-outline btn-sm" onclick="showCookiePreferences()">Nastavení</button>
+        <button class="btn btn-outline btn-sm" onclick="rejectAllCookies()">Odmítnout vše</button>
+        <button class="btn btn-primary btn-sm" onclick="acceptAllCookies()">Přijmout vše</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(banner);
+}
+
+function hideCookieBanner() {
+  const banner = document.getElementById('cookie-banner');
+  if (banner) banner.remove();
+}
+
+function acceptAllCookies() {
+  setCookieConsent({ necessary: true, analytics: true, marketing: true });
+  hideCookieBanner();
+  applyCookieConsent();
+}
+
+function rejectAllCookies() {
+  setCookieConsent(getDefaultConsent());
+  hideCookieBanner();
+  applyCookieConsent();
+}
+
+function saveCookiePreferences() {
+  const analytics = document.getElementById('cookie-analytics')?.checked || false;
+  const marketing = document.getElementById('cookie-marketing')?.checked || false;
+  setCookieConsent({ necessary: true, analytics, marketing });
+  const modal = document.getElementById('cookie-preferences-modal');
+  if (modal) modal.remove();
+  hideCookieBanner();
+  applyCookieConsent();
+}
+
+function showCookiePreferences() {
+  const existing = document.getElementById('cookie-preferences-modal');
+  if (existing) existing.remove();
+
+  const consent = getCookieConsent() || getDefaultConsent();
+  const modal = document.createElement('div');
+  modal.id = 'cookie-preferences-modal';
+  modal.className = 'cookie-preferences';
+  modal.innerHTML = `
+    <div class="cookie-preferences-inner">
+      <h2>Nastavení cookies</h2>
+      <p>Zde můžete spravovat své preference pro používání cookies.</p>
+      <div class="cookie-pref-item">
+        <div class="cookie-pref-label">
+          <strong>Nezbytné</strong>
+          <span>Tyto cookies jsou potřebné pro fungování webu. Nelze je vypnout.</span>
+        </div>
+        <input type="checkbox" checked disabled>
+      </div>
+      <div class="cookie-pref-item">
+        <div class="cookie-pref-label">
+          <strong>Analytické</strong>
+          <span>Pomáhají nám zlepšovat službu analýzou způsobu používání.</span>
+        </div>
+        <input type="checkbox" id="cookie-analytics" ${consent.analytics ? 'checked' : ''}>
+      </div>
+      <div class="cookie-pref-item">
+        <div class="cookie-pref-label">
+          <strong>Marketingové</strong>
+          <span>Umožňují zobrazování relevantních nabídek.</span>
+        </div>
+        <input type="checkbox" id="cookie-marketing" ${consent.marketing ? 'checked' : ''}>
+      </div>
+      <div class="cookie-pref-actions">
+        <button class="btn btn-outline" onclick="rejectAllCookies()">Odmítnout vše</button>
+        <button class="btn btn-outline" onclick="document.getElementById('cookie-preferences-modal').remove();showCookieBanner()">Zpět</button>
+        <button class="btn btn-primary" onclick="saveCookiePreferences()">Uložit nastavení</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+}
+
+function applyCookieConsent() {
+  const consent = getCookieConsent();
+  if (!consent) return;
+  // Future: apply analytics/marketing scripts here based on consent
+  // if (consent.analytics) { loadAnalytics(); }
+  // if (consent.marketing) { loadMarketing(); }
+  console.log('Cookie consent applied:', JSON.stringify(consent));
+}
+
+function initCookieConsent() {
+  const consent = getCookieConsent();
+  if (!consent) {
+    showCookieBanner();
+  } else {
+    applyCookieConsent();
+  }
+}
+
+
