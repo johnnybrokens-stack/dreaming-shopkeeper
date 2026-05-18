@@ -48,8 +48,8 @@
         <h1>Profesionální texty pro váš <span class="gradient-text">e-shop za 10 sekund</span></h1>
         <p class="hero-subtitle">Generujte popisy produktů, SEO meta popisky, chytlavé titulky a e-maily pro opuštěné košíky. Vše česky, přesvědčivě a eticky.</p>
         <div class="hero-buttons">
-          <button class="btn btn-primary btn-lg glow" onclick="scrollToFreeTrial()">Vyzkoušet zdarma →</button>
-          <a href="/jak-to-funguje" class="btn btn-outline btn-lg">Jak to funguje</a>
+          <a href="/samo-ui" class="btn btn-primary btn-lg glow">Vyzkoušet zdarma →</a>
+          <button class="btn btn-outline btn-lg" onclick="scrollToSection('jak-to-funguje')">Jak to funguje →</button>
         </div>
         <div class="hero-stats">
           <div class="stat"><span class="stat-number">⚡ 10s</span><span class="stat-label">Generování textu</span></div>
@@ -126,9 +126,8 @@
               <label>Název produktu</label>
               <input type="text" id="free-topic" placeholder="např. Bezdrátová sluchátka s ANC" maxlength="200">
             </div>
-            <div class="form-group">
-              <label>&nbsp;</label>
-              <button class="btn btn-primary btn-lg" onclick="generateFreeSample()" id="free-generate-btn">
+            <div class="form-group" style="min-width:200px;">
+              <button class="btn btn-primary btn-lg" onclick="generateFreeSample()" id="free-generate-btn" style="width:100%;">
                 <span id="free-btn-text">⚡ Vygenerovat ukázku</span>
                 <span id="free-btn-loading" style="display:none"><span class="spinner-small"></span> Generuji...</span>
               </button>
@@ -229,47 +228,51 @@
     </div>
   </section>
 
-  <section id="testimonials" class="testimonials-section">
+  <section id="reviews" class="testimonials-section">
     <div class="container">
       <div class="section-header">
-        <span class="badge">Reference</span>
-        <h2>Co říkají <span class="gradient-text">beta testeři</span></h2>
-        <p class="section-subtitle">Ukázkové reference z interního beta testování — první reálné ohlasy</p>
+        <span class="badge">Recenze</span>
+        <h2>Co říkají <span class="gradient-text">naši uživatelé</span></h2>
+        <p class="section-subtitle">Reálné ohlasy od beta testerů a uživatelů Dreaming Shopkeeper</p>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Od založení e-shopu jsem psala texty sama. Dreaming Shopkeeper mi ušetří hodiny práce. Výsledky jsou srovnatelné s profesionálním textařem."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">PM</div>
-            <div>
-              <strong>Petra Malá</strong>
-              <span>modernidarky.cz</span>
-            </div>
-          </div>
+      <div id="reviews-list" class="testimonials-grid">
+        <div class="loading-area" style="color:var(--gray-light)">
+          <p>Načítám recenze...</p>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Zkoušel jsem různé AI nástroje, ale čeština byla vždy problém. Tohle fakt funguje — výstupy jsou přirozené a bez strojového dojmu."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">KN</div>
-            <div>
-              <strong>Karel Novotný</strong>
-              <span>svetlech.cz</span>
-            </div>
+      </div>
+      <div style="text-align:center;margin-top:40px">
+        <button class="btn btn-outline-white" onclick="document.getElementById('review-form').style.display='block';this.style.display='none'">✏️ Přidat recenzi</button>
+      </div>
+      <div id="review-form" style="display:none;max-width:600px;margin:30px auto 0;background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);padding:32px;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.1)">
+        <h3 style="margin-bottom:20px;color:var(--white)">Napsat recenzi</h3>
+        <form onsubmit="submitReview(event)">
+          <div class="form-group">
+            <label style="color:var(--gray-light)">Jméno *</label>
+            <input type="text" id="review-name" required minlength="2" placeholder="Vaše jméno" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.15);color:var(--white)">
           </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★☆</div>
-          <p class="testimonial-text">"Profesionální výstupy, které prodávají. Ocenil bych jen více šablon, ale základní popisy produktů zvládá skvěle."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">JP</div>
-            <div>
-              <strong>Jan Procházka</strong>
-              <span>shopmobily.cz</span>
-            </div>
+          <div class="form-group">
+            <label style="color:var(--gray-light)">E-mail (volitelný)</label>
+            <input type="email" id="review-email" placeholder="vas@email.cz" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.15);color:var(--white)">
           </div>
-        </div>
+          <div class="form-group">
+            <label style="color:var(--gray-light)">Hodnocení *</label>
+            <div class="star-rating" id="star-rating" style="font-size:2rem;cursor:pointer;letter-spacing:4px">
+              <span data-star="1" onclick="setRating(1)">☆</span>
+              <span data-star="2" onclick="setRating(2)">☆</span>
+              <span data-star="3" onclick="setRating(3)">☆</span>
+              <span data-star="4" onclick="setRating(4)">☆</span>
+              <span data-star="5" onclick="setRating(5)">☆</span>
+            </div>
+            <input type="hidden" id="review-rating" value="0">
+          </div>
+          <div class="form-group">
+            <label style="color:var(--gray-light)">Vaše recenze *</label>
+            <textarea id="review-text" required minlength="10" maxlength="2000" rows="4" placeholder="Napište svůj názor na Dreaming Shopkeeper..." style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.15);color:var(--white);resize:vertical"></textarea>
+          </div>
+          <div id="review-error" class="error-area" style="display:none"></div>
+          <div id="review-success" style="display:none;padding:16px 20px;background:rgba(16,185,129,0.15);color:#34d399;border-radius:var(--radius-sm);border:1px solid rgba(16,185,129,0.3);margin-bottom:16px"></div>
+          <button type="submit" class="btn btn-primary btn-block" id="review-submit-btn">Odeslat recenzi</button>
+        </form>
       </div>
     </div>
   </section>

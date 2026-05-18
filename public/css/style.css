@@ -156,8 +156,8 @@ body { font-family: 'Exo 2', 'Inter', -apple-system, BlinkMacSystemFont, sans-se
 .free-trial-card h2 { font-size: 2.2rem; margin-bottom: 12px; }
 .free-trial-card > p { color: var(--gray-light); margin-bottom: 30px; }
 .free-trial-form { max-width: 600px; margin: 0 auto; }
-.form-row { display: flex; gap: 12px; align-items: flex-end; }
-.form-row .form-group:first-child { flex: 1; }
+.form-row { display: flex; gap: 12px; align-items: center; justify-content: center; }
+.form-row .form-group:first-child { flex: 1; max-width: 400px; }
 
 /* Features */
 .features { padding: 100px 0; background: var(--light); }

@@ -38,3 +38,6 @@ button, .btn { font-family: 'Exo 2', 'Inter', system-ui, sans-serif; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
 ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+
+/* Ensure body fills viewport */
+html, body, #root { min-height: 100vh; overflow-x: hidden; }

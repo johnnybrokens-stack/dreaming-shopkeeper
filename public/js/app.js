@@ -62,9 +62,13 @@ function logout() {
   window.location.href = '/';
 }
 
-function scrollToFreeTrial() {
-  const el = document.getElementById('free-trial');
+function scrollToSection(id) {
+  const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
+
+function scrollToFreeTrial() {
+  scrollToSection('free-trial');
 }
 
 async function generateFreeSample() {
@@ -143,8 +147,102 @@ function toggleMobileMenu() {
   if (nav) nav.classList.toggle('mobile-open');
 }
 
+/* ─── Reviews ─── */
+let reviewRating = 0;
+
+function setRating(val) {
+  reviewRating = val;
+  document.getElementById('review-rating').value = val;
+  const stars = document.querySelectorAll('#star-rating span');
+  stars.forEach((s, i) => {
+    s.textContent = i < val ? '★' : '☆';
+  });
+}
+
+async function submitReview(e) {
+  e.preventDefault();
+  const name = document.getElementById('review-name').value;
+  const email = document.getElementById('review-email').value;
+  const rating = reviewRating;
+  const text = document.getElementById('review-text').value;
+  const error = document.getElementById('review-error');
+  const success = document.getElementById('review-success');
+  const btn = document.getElementById('review-submit-btn');
+
+  if (rating < 1) {
+    error.textContent = 'Prosím vyberte hodnocení (1-5 hvězdiček)';
+    error.style.display = 'block';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Odesílám...';
+  error.style.display = 'none';
+  success.style.display = 'none';
+
+  try {
+    const res = await fetch('/api/reviews/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, rating, text })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Odeslání selhalo');
+
+    success.textContent = data.message;
+    success.style.display = 'block';
+    document.getElementById('review-name').value = '';
+    document.getElementById('review-email').value = '';
+    document.getElementById('review-text').value = '';
+    setRating(0);
+    document.querySelector('[onclick*="review-form"]')?.click();
+    document.getElementById('review-form').style.display = 'none';
+  } catch (err) {
+    error.textContent = err.message;
+    error.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Odeslat recenzi';
+  }
+}
+
+async function loadReviews() {
+  const list = document.getElementById('reviews-list');
+  if (!list) return;
+  try {
+    const res = await fetch('/api/reviews/list');
+    const data = await res.json();
+    if (!data.reviews || data.reviews.length === 0) {
+      list.innerHTML = '<div class="empty-state" style="color:var(--gray-light);grid-column:1/-1"><div class="empty-icon" style="font-size:3rem">💬</div><h3 style="color:var(--white)">Zatím žádné recenze</h3><p>Buďte první, kdo ohodnotí Dreaming Shopkeeper!</p></div>';
+      return;
+    }
+    list.innerHTML = data.reviews.map(r => {
+      const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+      const initials = r.name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+      const date = new Date(r.created_at).toLocaleDateString('cs-CZ');
+      return `
+        <div class="testimonial-card">
+          <div class="testimonial-stars">${stars}</div>
+          <p class="testimonial-text">"${escapeHtml(r.text)}"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">${initials}</div>
+            <div>
+              <strong>${escapeHtml(r.name)}</strong>
+              <span>${date}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  } catch {
+    list.innerHTML = '<div style="text-align:center;padding:40px;color:var(--gray-light);grid-column:1/-1">Nepodařilo se načíst recenze. Zkuste to prosím později.</div>';
+  }
+}
+
 // Initialize on load
 document.addEventListener('DOMContentLoaded', () => {
+  loadReviews();
+
   const modal = document.getElementById('auth-modal');
   if (modal) {
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });

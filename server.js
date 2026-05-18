@@ -9,6 +9,7 @@ const { initDb } = require('./config/db');
 const authRoutes = require('./routes/api/auth');
 const contentRoutes = require('./routes/api/content');
 const paymentRoutes = require('./routes/api/payment');
+const reviewRoutes = require('./routes/api/reviews');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -52,6 +53,7 @@ if (process.env.NODE_ENV !== 'test') {
 app.use('/api/auth', authRoutes);
 app.use('/api/content', contentRoutes);
 app.use('/api/payment', paymentRoutes.router);
+app.use('/api/reviews', reviewRoutes);
 
 // GDPR stub pages
 const legalPages = { soukromi: 'Zásady ochrany osobních údajů', podminky: 'Obchodní podmínky', 'zasady-reklam': 'Zásady reklamní etiky' };
