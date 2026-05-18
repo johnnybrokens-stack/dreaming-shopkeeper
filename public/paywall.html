@@ -12,7 +12,16 @@
   <nav class="navbar">
     <div class="container nav-container">
       <a href="/" class="logo"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
-      <div class="nav-links"><a href="/">← Zpět</a><a href="/dashboard">Panel</a></div>
+      <div class="nav-links" id="nav-links">
+        <a href="/">← Zpět</a>
+        <a href="/samo-ui" class="btn btn-samo">🤖 SAMO UI</a>
+        <span id="nav-credits" class="credits-badge" style="display:none">💎 <span id="nav-credits-count">0</span> kreditů</span>
+        <a href="/dashboard" id="nav-dashboard" class="btn btn-outline" style="display:none">📊 Panel</a>
+        <button id="nav-logout" class="btn btn-outline" style="display:none" onclick="logout()">Odhlásit se</button>
+        <a href="/login" id="nav-login" class="btn btn-outline">Přihlásit se</a>
+        <a href="/register" id="nav-register" class="btn btn-primary">Začít zdarma</a>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
     </div>
   </nav>
 

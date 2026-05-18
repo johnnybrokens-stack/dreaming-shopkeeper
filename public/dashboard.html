@@ -10,12 +10,13 @@
   <nav class="navbar">
     <div class="container nav-container">
       <a href="/" class="logo"><div class="logo-icon">🏪</div>Dreaming<span>Shopkeeper</span></a>
-      <div class="nav-links">
+      <div class="nav-links" id="nav-links">
         <span id="user-credits" class="credits-badge"></span>
         <span id="user-name" class="user-display"></span>
         <button class="btn btn-outline btn-sm" onclick="manageSubscription()">Platby</button>
         <button class="btn btn-sm" onclick="logout()">Odhlásit</button>
       </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
     </div>
   </nav>
 
@@ -223,6 +224,11 @@
     if (se) se.value = user.email || '';
     if (st) st.value = (user.tier || 'free').charAt(0).toUpperCase() + (user.tier || 'free').slice(1);
     if (sc) sc.value = (user.credits || 5) + ' kreditů';
+
+    function toggleMobileMenu() {
+      const nav = document.getElementById('nav-links');
+      if (nav) nav.classList.toggle('mobile-open');
+    }
   </script>
 </body>
 </html>
